@@ -1,0 +1,1995 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BoMassage | Sanfte Massage München-Sendling</title>
+    <meta name="description" content="Private, sanfte Massagepraxis in München-Sendling. Individuell abgestimmte Ganzkörpermassagen, Terminvereinbarung direkt per WhatsApp.">
+    <meta property="og:title" content="BoMassage | Sanfte Massage München-Sendling">
+    <meta property="og:description" content="Private, sanfte Massagepraxis in München-Sendling. Individuell abgestimmte Ganzkörpermassagen, Terminvereinbarung direkt per WhatsApp.">
+    <meta property="og:image" content="assets/favicon-icon.png">
+    <meta property="og:type" content="business.business">
+    <meta name="twitter:card" content="summary">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon-icon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+        }
+        .brand-logo, .hero-main-heading, .main-title {
+            font-family: 'Times New Roman', Times, serif;
+        }
+        :root {
+            /* ===== 主色板：Teal 家族 ===== */
+            --dark-teal-solid: #183c4a;   /* header / 侧边导航背景 */
+            --pale-teal: #BACDC8;         /* 高亮/hover/次要链接 */
+            --cream-white: #F7FAFC;       /* 极浅色，预留给浅色区块 */
+            --teal-light: #96b8b8;        /* 渐变浅段 / 装饰图形 */
+            --teal-mid: #68989d;          /* 渐变中浅段 / 装饰图形 */
+            --teal-deep: #28667c;         /* 渐变中深段 */
+            --teal-darkest: #132b38;      /* 渐变最深段 */
+            --teal-hero-bg: #224e5c;      /* Hero 区块背景 */
+            --teal-card-bg: #2b5c6b;      /* 服务卡片图片底色 */
+            --accent-icon: var(--pale-teal); /* 图标统一色，替代原突兀的绿色 */
+
+            /* ===== 文字颜色分级（深色背景上的白色不透明度阶梯） ===== */
+            --text-primary: #ffffff;              /* 标题 / 强调文字 */
+            --text-secondary: rgba(255,255,255,0.85); /* 正文 */
+            --text-tertiary: rgba(255,255,255,0.75);  /* 次要说明 */
+            --text-muted: rgba(255,255,255,0.6);      /* 弱化/版权信息 */
+
+            /* ===== 字号系统 ===== */
+            --fs-xs: 0.75rem;     /* 极小：辅助按钮文字 */
+            --fs-sm: 0.875rem;    /* 小：署名、footer链接、卡片描述 */
+            --fs-md: 1.05rem;     /* 中：正文强调、FAQ问题 */
+            --fs-lg: 1.2rem;      /* 大：卡片标题、价格数字 */
+            --fs-xl: 1.6rem;      /* 特大：品牌Logo */
+            --fs-hero: clamp(1.6rem, 4vw, 2.6rem);      /* Hero 大标题 */
+            --fs-title: clamp(1.8rem, 4vw, 2.9rem);     /* 板块主标题 */
+            --fs-hero-desc: clamp(0.9rem, 1.5vw, 1.05rem); /* Hero 描述文字 */
+
+            --anim-duration: 0.65s;
+            --anim-ease: cubic-bezier(0.22, 1, 0.36, 1);
+            --stagger-delay: 0.12s;
+        }
+        html {
+            scroll-padding-top: 85px;
+            scroll-behavior: smooth;
+        }
+        body {
+            background: linear-gradient(to bottom, var(--teal-light) 0%, var(--teal-mid) 28%, var(--teal-deep) 60%, var(--teal-darkest) 100%);
+            color: var(--cream-white);
+            line-height: 1.8;
+            overflow-x: hidden;
+            animation: pageFadeIn 1s ease-out forwards;
+        }
+        @keyframes pageFadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideUpFade {
+            from {
+                opacity: 0;
+                transform: translateY(35px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes breatheSlow {
+            0% { transform: translateY(0) scale(1); opacity: 0.5; }
+            50% { transform: translateY(-8px) scale(1.02); opacity: 0.65; }
+            100% { transform: translateY(0) scale(1); opacity: 0.5; }
+        }
+        /* 全局FA图标统一主题配色 */
+        .fas, .fa-solid, .fa-brands {
+            color: var(--accent-icon);
+            transition: color 0.25s ease;
+        }
+        a:hover .fas, a:hover .fa-solid, a:hover .fa-brands,
+        button:hover .fas, button:hover .fa-solid, button:hover .fa-brands {
+            color: var(--text-primary);
+        }
+        /* 滚动动画初始状态 */
+        .scroll-animate {
+            opacity: 1;
+            transform: none;
+            transition: all var(--anim-duration) var(--anim-ease);
+        }
+        .scroll-animate.pre-animate {
+            opacity: 0;
+            transform: translateY(35px);
+        }
+        .scroll-animate.animate-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .delay-1 { transition-delay: calc(var(--stagger-delay) * 1); }
+        .delay-2 { transition-delay: calc(var(--stagger-delay) * 2); }
+        .delay-3 { transition-delay: calc(var(--stagger-delay) * 3); }
+        .delay-4 { transition-delay: calc(var(--stagger-delay) * 4); }
+        .delay-5 { transition-delay: calc(var(--stagger-delay) * 5); }
+        .delay-6 { transition-delay: calc(var(--stagger-delay) * 6); }
+        .delay-7 { transition-delay: calc(var(--stagger-delay) * 7); }
+        .delay-8 { transition-delay: calc(var(--stagger-delay) * 8); }
+        /* 顶部导航栏 */
+        header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            background-color: var(--dark-teal-solid);
+            z-index: 999;
+            padding: 1.3rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.35s ease;
+        }
+        header.scrolled {
+            padding: 0.9rem 5%;
+            background-color: rgba(24, 60, 74, 0.96);
+            backdrop-filter: blur(8px);
+        }
+        .brand-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-size: var(--fs-xl);
+            letter-spacing: 2px;
+            font-weight: 500;
+            color: var(--text-primary);
+            white-space: nowrap;
+            cursor: pointer;
+        }
+        .brand-logo-img {
+            height: 40px;
+            width: auto;
+            display: block;
+        }
+        .brand-logo-text {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            line-height: 1.2;
+        }
+        .brand-logo-line1 {
+            font-size: var(--fs-md);
+            font-weight: 400;
+            letter-spacing: 1px;
+        }
+        .brand-logo-line2 {
+            font-size: var(--fs-xs);
+            font-weight: 300;
+            opacity: 0.8;
+            letter-spacing: 1px;
+        }
+        .nav-group {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            flex-shrink: 0;
+        }
+        .hamburger-btn {
+            display: block;
+            background: transparent;
+            border: none;
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        /* 侧边导航菜单 */
+        .side-nav {
+            position: fixed;
+            top: 0;
+            right: -280px;
+            width: 280px;
+            height: 100vh;
+            background: var(--dark-teal-solid);
+            z-index: 1000;
+            padding: 6rem 2rem;
+            transition: right 0.3s ease;
+        }
+        .side-nav.open {
+            right: 0;
+        }
+        .side-nav .nav-link {
+            display: block;
+            width: 100%;
+            background: transparent;
+            border: none;
+            text-align: left;
+            font-family: inherit;
+            color: var(--text-primary);
+            text-decoration: none;
+            padding: 0.9rem 0;
+            font-size: var(--fs-md);
+            border-bottom: 1px solid rgba(255,255,255,0.15);
+            transition: 0.2s;
+            cursor: pointer;
+        }
+        .side-nav .nav-link:hover {
+            color: var(--pale-teal);
+        }
+        .side-nav .nav-link.lang-content {
+            display: none;
+        }
+        .side-nav .nav-link.lang-content.active {
+            display: block;
+        }
+        .nav-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.5);
+            z-index: 998;
+            display: none;
+        }
+        .nav-overlay.show {
+            display: block;
+        }
+        /* 语言下拉 */
+        .lang-dropdown-wrap {
+            position: relative;
+        }
+        .lang-current {
+            border: none;
+            background: transparent;
+            font-size: var(--fs-md);
+            cursor: pointer;
+            padding: 6px 10px;
+            color: var(--text-primary);
+            transition: 0.2s ease;
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        .lang-current:hover {
+            color: var(--pale-teal);
+        }
+        .lang-current:active {
+            transform: scale(0.96);
+        }
+        .lang-dropdown-list {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background-color: var(--dark-teal-solid);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 8px;
+            padding: 8px 0;
+            min-width: 90px;
+            display: none;
+            z-index: 1000;
+            transform: translateY(8px);
+            opacity: 0;
+            transition: all 0.25s ease;
+        }
+        .lang-dropdown-list.open {
+            display: block;
+            transform: translateY(0);
+            opacity: 1;
+        }
+        .lang-option {
+            display: block;
+            width: 100%;
+            background: transparent;
+            border: none;
+            color: var(--text-tertiary);
+            font-size: var(--fs-md);
+            padding: 10px 16px;
+            cursor: pointer;
+            text-align: center;
+            transition: 0.2s ease;
+        }
+        .lang-option:hover {
+            background: rgba(255,255,255,0.1);
+            color: var(--text-primary);
+        }
+        .lang-option.active {
+            color: var(--text-primary);
+        }
+        .book-cta {
+            background: #fff;
+            color: var(--dark-teal-solid);
+            border: none;
+            padding: 0.6rem 1.3rem;
+            border-radius: 999px;
+            cursor: pointer;
+            font-size: var(--fs-sm);
+            transition: 0.3s ease;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+        .book-cta:hover {
+            background: var(--pale-teal);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+        }
+        .book-cta:active {
+            transform: scale(0.97);
+        }
+        .book-float {
+            position: fixed;
+            right: 1.6rem;
+            bottom: 1.6rem;
+            z-index: 500;
+            background: var(--dark-teal-solid);
+            color: var(--text-primary);
+            border: 1px solid rgba(255,255,255,0.25);
+            padding: 0.85rem 1.6rem;
+            border-radius: 999px;
+            font-size: var(--fs-sm);
+            font-weight: 500;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+            transition: 0.3s ease;
+        }
+        .book-float i {
+            color: var(--pale-teal);
+        }
+        .book-float:hover {
+            background: var(--teal-mid);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+        }
+        .book-float:active {
+            transform: scale(0.97);
+        }
+        .lang-content.book-float.active {
+            display: inline-flex;
+        }
+        .hero-banner {
+            margin-top: 72px;
+            width: 100%;
+            min-height: 80vh;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            padding: 0 5%;
+        }
+        .hero-slide {
+            position: absolute;
+            inset: 0;
+            background-size: cover;
+            background-position: 92% 4%;
+            opacity: 0;
+            transition: opacity 1.4s ease;
+            z-index: 0;
+        }
+        .hero-slide:nth-of-type(2) {
+            background-position: 85% 25%;
+        }
+        .hero-slide:nth-of-type(3) {
+            background-position: 78% 40%;
+        }
+        .hero-slide.active {
+            opacity: 1;
+            z-index: 1;
+        }
+        .hero-dots {
+            position: absolute;
+            bottom: 1.6rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            z-index: 3;
+        }
+        .hero-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.4);
+            border: none;
+            padding: 0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .hero-dot.active {
+            background: var(--text-primary);
+            width: 22px;
+            border-radius: 4px;
+        }
+        .hero-banner::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(to right, var(--teal-darkest) 0%, rgba(19,43,56,0.85) 28%, rgba(19,43,56,0.45) 50%, rgba(19,43,56,0.08) 68%, rgba(19,43,56,0) 82%),
+                linear-gradient(rgba(150,184,184,0.22), rgba(150,184,184,0.22)),
+                linear-gradient(to bottom, var(--dark-teal-solid) 0%, rgba(24,60,74,0) 12%, rgba(104,152,157,0) 42%, var(--teal-mid) 100%);
+            z-index: 2;
+        }
+        .hero-text-wrap {
+            position: relative;
+            z-index: 3;
+            max-width: 620px;
+            animation: slideUpFade 1s ease-out forwards;
+        }
+        .hero-main-heading {
+            font-size: var(--fs-hero);
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+        }
+        .hero-desc-text {
+            font-size: var(--fs-hero-desc);
+            color: var(--text-secondary);
+            line-height: 1.9;
+            text-align: left;
+        }
+        .container {
+            max-width: 1220px;
+            margin: 0 auto;
+            padding: 6.5rem 5%;
+            text-align: center;
+        }
+        .section-spacing {
+            margin-bottom: 5rem;
+        }
+        .faq-section-bottom {
+            margin-bottom: 1.5rem !important;
+        }
+        .main-title {
+            font-size: var(--fs-title);
+            font-weight: 500;
+            margin-bottom: 2rem;
+            color: var(--text-primary);
+        }
+        .services-grid {
+            margin-top: 4.2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(285px, 1fr));
+            row-gap: 4.8rem;
+            column-gap: 2.8rem;
+        }
+        .service-card {
+            text-align: left;
+            transition: all 0.4s ease;
+        }
+        .service-card:hover {
+            transform: translateY(-8px);
+        }
+        .card-img-box {
+            width: 100%;
+            height: 270px;
+            border-radius: 22px;
+            overflow: hidden;
+            margin-bottom: 1.3rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.18);
+            background: var(--teal-card-bg);
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            padding:1rem;
+            transition: box-shadow 0.4s ease;
+            position: relative;
+        }
+        .card-img-box.has-photo {
+            padding: 0;
+        }
+        .card-photo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .card-icon-badge {
+            position: absolute;
+            top: 14px;
+            left: 14px;
+            width: 42px;
+            height: 42px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            color: var(--pale-teal);
+            filter: drop-shadow(0 1px 4px rgba(0,0,0,0.6));
+            z-index: 2;
+        }
+        .card-icon-badge svg {
+            width: 100%;
+            height: 100%;
+        }
+        .service-card:hover .card-img-box {
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
+        }
+        .service-name {
+            font-size: var(--fs-lg);
+            margin-bottom: 0.9rem;
+            color: var(--text-primary);
+        }
+        .service-desc {
+            font-size: var(--fs-sm);
+            color: var(--text-tertiary);
+            line-height: 1.7;
+            text-align: left;
+            margin-bottom: 1rem;
+        }
+        .service-suitable-title {
+            font-size: 0.7rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--pale-teal);
+            margin-bottom: 0.6rem;
+        }
+        .service-suitable-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .service-suitable-list li {
+            position: relative;
+            padding-left: 1.1rem;
+            font-size: var(--fs-sm);
+            color: var(--text-tertiary);
+            line-height: 1.6;
+            margin-bottom: 0.4rem;
+        }
+        .service-suitable-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.6em;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: var(--accent-icon);
+        }
+        .oil-icon {
+            color: var(--accent-icon);
+            margin-right: 0.35rem;
+        }
+        .review-grid {
+            margin-top: 3.2rem;
+            display: flex;
+            gap: 1.4rem;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+            padding-bottom: 0.2rem;
+        }
+        .review-grid::-webkit-scrollbar {
+            display: none;
+        }
+        /* 已修改：浅青半透底色 */
+        .review-card {
+            flex: 0 0 auto;
+            width: min(100%, 560px);
+            scroll-snap-align: center;
+            background: rgba(186, 205, 200, 0.12);
+            padding: 2.2rem;
+            border-radius: 22px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.12);
+            border: 1px solid rgba(255,255,255,0.15);
+            text-align: left;
+        }
+        .review-content {
+            font-style: italic;
+            color: var(--text-secondary);
+            margin-bottom: 1.4rem;
+        }
+        .review-top {
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+            margin-bottom: 1.3rem;
+        }
+        .review-avatar {
+            flex-shrink: 0;
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            background-color: var(--dark-teal-solid);
+            background-size: cover;
+            background-position: center;
+            border: 1px solid #ffffff;
+        }
+        .review-top-text {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: left;
+        }
+        .review-author {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 1.05rem;
+            font-weight: 500;
+            color: var(--text-primary);
+            line-height: 1.3;
+            margin-bottom: 0.05rem;
+        }
+        .review-date {
+            font-size: 0.6rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--text-tertiary);
+            line-height: 1.3;
+        }
+        .review-chat-link {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 0.4rem;
+            width: 100%;
+            background: transparent;
+            border: none;
+            font-family: inherit;
+            color: var(--pale-teal);
+            font-size: var(--fs-sm);
+            padding: 0;
+            cursor: pointer;
+            transition: color 0.2s ease, gap 0.2s ease;
+        }
+        .review-chat-link i {
+            font-size: 0.75rem;
+            transition: transform 0.2s ease;
+        }
+        .review-chat-link:hover {
+            color: var(--text-primary);
+            gap: 0.6rem;
+        }
+        .review-dots {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.6rem;
+            margin-top: 1.6rem;
+        }
+        .review-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.35);
+            border: none;
+            padding: 0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .review-dot.active {
+            background: var(--pale-teal);
+            width: 22px;
+            border-radius: 4px;
+        }
+        .promise-list {
+            display: flex;
+            flex-direction: column;
+            gap: 2.6rem;
+            margin-top: 2rem;
+        }
+        .promise-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.4rem;
+            text-align: left;
+        }
+        .promise-icon {
+            flex: 0 0 auto;
+            width: 46px;
+            height: 46px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            color: var(--accent-icon);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 50%;
+        }
+        .promise-title {
+            font-size: var(--fs-lg);
+            font-weight: 500;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+        .promise-desc {
+            font-size: var(--fs-sm);
+            color: var(--text-tertiary);
+            line-height: 1.65;
+        }
+        .price-intro {
+            color: var(--text-tertiary);
+            font-size: var(--fs-md);
+            margin-bottom: 0.6rem;
+        }
+        .price-num {
+            font-size: var(--fs-lg);
+            font-weight: bold;
+            color: var(--text-tertiary);
+        }
+        .duration-guide {
+            margin: 1rem auto 3.8rem;
+            max-width: 620px;
+        }
+        .price-summary {
+            cursor: pointer;
+            list-style: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.8rem;
+            border-bottom: 1px solid var(--pale-teal);
+            padding-bottom: 0.6rem;
+            transition: border-color 0.2s ease;
+        }
+        .price-summary::-webkit-details-marker {
+            display: none;
+        }
+        .price-summary:hover {
+            border-color: var(--text-primary);
+        }
+        .price-summary i {
+            flex-shrink: 0;
+            font-size: 0.75rem;
+            color: var(--pale-teal);
+            transition: transform 0.25s ease;
+        }
+        .duration-guide[open] .price-summary i {
+            transform: rotate(180deg);
+        }
+        .duration-guide-content {
+            margin: 0.9rem auto 0;
+            padding: 1.2rem 1.4rem;
+            background: rgba(186, 205, 200, 0.08);
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 14px;
+            color: var(--text-tertiary);
+            font-size: var(--fs-sm);
+            line-height: 1.7;
+            text-align: left;
+        }
+        .duration-guide-content p {
+            margin-bottom: 0.6rem;
+        }
+        .duration-guide-content p:last-child {
+            margin-bottom: 0;
+        }
+        /* 已修改：浅青半透底色 */
+        .standard-card {
+            background: rgba(186, 205, 200, 0.12);
+            max-width: 520px;
+            margin: 0 auto;
+            padding: 2.8rem;
+            border-radius: 22px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255,255,255,0.15);
+        }
+        .hour-row {
+            padding: 0.4rem 0;
+            color: var(--text-secondary);
+            text-align: center;
+        }
+        .contact-block {
+            text-align: center;
+        }
+        .social-icons-group {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 0.6rem 0 0.8rem 0;
+        }
+        /* 仅新增flex居中属性，其余原有样式完全保留 */
+        .social-icon-link {
+            font-size: 2.2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        .social-icon-link:hover {
+            transform: translateY(-4px) scale(1.1);
+        }
+        .social-icon-link:active {
+            transform: scale(0.95);
+        }
+        .contact-text-item {
+            margin: 0.8rem 0;
+            font-size: var(--fs-md);
+            color: var(--text-secondary);
+        }
+        .contact-text-item a {
+            color: var(--pale-teal);
+            text-decoration: none;
+            transition: 0.2s ease;
+        }
+        .contact-text-item a:hover {
+            text-decoration: underline;
+            color: var(--text-primary);
+        }
+        .opening-hours-wrap {
+            margin-top: 1.2rem;
+        }
+        .faq-container {
+            text-align: left;
+        }
+        .faq-item {
+            border-bottom: 1px solid rgba(255,255,255,0.15);
+            text-align: left;
+        }
+        .faq-question-btn {
+            width: 100%;
+            background: transparent;
+            border: none;
+            padding: 1.3rem 0;
+            font-size: var(--fs-md);
+            font-weight: normal;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            color: var(--text-primary);
+            text-align: left;
+            transition: color 0.25s ease;
+        }
+        .faq-question-btn:hover {
+            color: var(--pale-teal);
+        }
+        .faq-answer-box {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.55s var(--anim-ease);
+            color: var(--text-tertiary);
+            line-height: 1.9;
+            text-align: left;
+            padding-left: 4px;
+        }
+        .faq-item.active .faq-answer-box {
+            max-height: 1200px;
+            padding-bottom: 1.5rem;
+        }
+        .toggle-symbol {
+            font-size: 1.3rem;
+            line-height: 1;
+            transition: transform 0.3s ease;
+        }
+        .faq-item.active .toggle-symbol {
+            transform: rotate(45deg);
+        }
+        footer {
+            background: rgba(0,0,0,0.2);
+            padding: 4rem 5% 3rem;
+            text-align: center;
+            margin-top: 0;
+        }
+        .footer-columns {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+            max-width: 1220px;
+            margin: 0 auto 3rem;
+            text-align: left;
+        }
+        .footer-col-title {
+            font-size: var(--fs-md);
+            font-weight: 500;
+            color: var(--text-primary);
+            letter-spacing: 0.5px;
+            margin-bottom: 1.3rem;
+        }
+        .footer-col-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.7rem;
+            margin-bottom: 0.9rem;
+            font-size: var(--fs-sm);
+            color: var(--text-tertiary);
+            line-height: 1.55;
+        }
+        .footer-col-item i {
+            color: var(--accent-icon);
+            margin-top: 0.2rem;
+            flex-shrink: 0;
+            width: 16px;
+            text-align: center;
+        }
+        .footer-col-item a {
+            color: var(--text-tertiary);
+            text-decoration: none;
+            transition: 0.2s;
+        }
+        .footer-col-item a:hover {
+            color: var(--pale-teal);
+        }
+        .footer-social-row {
+            display: flex;
+            gap: 1.1rem;
+            margin-top: 1.1rem;
+        }
+        .footer-social-icon {
+            font-size: 1.5rem;
+            color: var(--accent-icon);
+            text-decoration: none;
+            transition: all 0.25s ease;
+        }
+        .footer-social-icon:hover {
+            color: var(--pale-teal);
+            transform: translateY(-3px);
+        }
+        .footer-divider {
+            border: none;
+            border-top: 1px solid rgba(255,255,255,0.15);
+            max-width: 1220px;
+            margin: 0 auto 2rem;
+        }
+        @media screen and (max-width: 900px) {
+            .footer-columns {
+                grid-template-columns: 1fr;
+                gap: 2.4rem;
+                text-align: center;
+            }
+            .footer-col-item {
+                justify-content: center;
+            }
+            .footer-social-row {
+                justify-content: center;
+            }
+        }
+        .footer-copyright {
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+        }
+        .footer-inline-link {
+            background: transparent;
+            border: none;
+            font-family: inherit;
+            color: var(--text-tertiary);
+            font-size: var(--fs-sm);
+            text-decoration: none;
+            cursor: pointer;
+            transition: 0.2s;
+            padding: 0;
+        }
+        .footer-inline-link:hover {
+            color: var(--pale-teal);
+        }
+        .lang-content {
+            display: none;
+        }
+        .lang-content.active {
+            display: block;
+        }
+        .legal-page-wrap {
+            display: none;
+            padding: 4rem 5%;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: left;
+        }
+        .legal-page-wrap.show {
+            display: block;
+        }
+        .legal-page-wrap h2 {
+            margin-bottom: 2rem;
+            color: var(--text-primary);
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+            padding-bottom: 1rem;
+        }
+        .legal-page-wrap p, .legal-page-wrap ul {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+        .legal-page-wrap ul {
+            padding-left: 1.5rem;
+        }
+        /* 弹窗遮罩层 */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.7);
+            z-index: 1100;
+            display: none;
+            overflow-y: auto;
+            padding-top: 100px;
+        }
+        .modal-overlay.open {
+            display: block;
+        }
+        /* 截图放大灯箱 */
+        .image-lightbox {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.85);
+            z-index: 1300;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 3rem 1.5rem;
+        }
+        .image-lightbox.open {
+            display: flex;
+        }
+        .image-lightbox img {
+            max-width: 100%;
+            max-height: 100%;
+            border-radius: 14px;
+            box-shadow: 0 15px 45px rgba(0,0,0,0.5);
+        }
+        .image-lightbox-close {
+            position: absolute;
+            top: 22px;
+            right: 26px;
+            background: transparent;
+            border: none;
+            color: var(--text-primary);
+            font-size: 1.9rem;
+            cursor: pointer;
+            line-height: 1;
+        }
+        /* 按摩券样式预览弹窗 */
+        .voucher-modal {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.85);
+            z-index: 1300;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 1.2rem;
+        }
+        .voucher-modal.open {
+            display: flex;
+        }
+        .voucher-modal-box {
+            position: relative;
+            background: var(--dark-teal-solid);
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 20px;
+            padding: 2rem;
+            max-width: 640px;
+            width: 100%;
+            max-height: 85vh;
+            overflow-y: auto;
+        }
+        .voucher-modal-title {
+            font-size: var(--fs-lg);
+            color: var(--text-primary);
+            margin-bottom: 1.4rem;
+            text-align: center;
+        }
+        .voucher-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+        .voucher-grid img {
+            width: 100%;
+            border-radius: 12px;
+            display: block;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+        }
+        .voucher-modal-close {
+            position: absolute;
+            top: 18px;
+            right: 20px;
+            background: transparent;
+            border: none;
+            color: var(--text-primary);
+            font-size: 1.7rem;
+            cursor: pointer;
+            line-height: 1;
+        }
+        .voucher-trigger {
+            background: transparent;
+            border: none;
+            font-family: inherit;
+            font-size: inherit;
+            color: var(--pale-teal);
+            text-decoration: underline;
+            text-underline-offset: 2px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            padding: 0;
+        }
+        .voucher-trigger i {
+            font-size: 0.75em;
+        }
+        .voucher-trigger:hover {
+            color: var(--text-primary);
+        }
+        /* 移动端适配 */
+        @media screen and (max-width: 768px) {
+            .nav-group {
+                gap: 0.5rem;
+            }
+            .lang-current {
+                font-size: var(--fs-sm);
+                padding: 4px 6px;
+            }
+            .book-float {
+                font-size: var(--fs-xs);
+                padding: 0.7rem 1.2rem;
+                right: 1rem;
+                bottom: 1rem;
+            }
+            .hero-banner {
+                padding: 4rem 6%;
+                min-height: 65vh;
+            }
+            .hero-slide {
+                background-position: 88% 5%;
+            }
+            .hero-slide:nth-of-type(2) {
+                background-position: 82% 22%;
+            }
+            .hero-slide:nth-of-type(3) {
+                background-position: 75% 38%;
+            }
+            .hero-banner::before {
+                background:
+                    linear-gradient(rgba(19,43,56,0.68), rgba(19,43,56,0.68)),
+                    linear-gradient(to bottom, var(--dark-teal-solid) 0%, rgba(24,60,74,0) 10%, rgba(104,152,157,0) 40%, var(--teal-mid) 100%);
+            }
+            .hero-text-wrap {
+                max-width: 100%;
+            }
+            .brand-logo {
+                font-size: 1.25rem;
+            }
+            .brand-logo-img {
+                height: 30px;
+            }
+            .brand-logo-line1 {
+                font-size: var(--fs-sm);
+            }
+            .brand-logo-line2 {
+                font-size: 0.65rem;
+            }
+            .container {
+                padding: 4rem 5%;
+            }
+            .social-icons-group {
+                gap: 1.5rem;
+            }
+            .social-icon-link {
+                font-size: 1.8rem;
+            }
+            .standard-card {
+                padding: 2rem 1.5rem;
+            }
+            .price-intro {
+                font-size: 0.8rem;
+            }
+            .price-num {
+                font-size: 0.78rem;
+            }
+            .price-summary {
+                gap: 0.4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 侧边导航遮罩+菜单 -->
+    <div class="nav-overlay" id="navOverlay"></div>
+    <div class="side-nav" id="sideNav">
+        <button class="nav-link lang-content active" data-lang="en" data-target="#home">Home</button>
+        <button class="nav-link lang-content" data-lang="de" data-target="#home">Start</button>
+        <button class="nav-link lang-content" data-lang="zh" data-target="#home">首页</button>
+
+        <button class="nav-link lang-content active" data-lang="en" data-target="#services">Treatments & Prices</button>
+        <button class="nav-link lang-content" data-lang="de" data-target="#services">Behandlungen & Preise</button>
+        <button class="nav-link lang-content" data-lang="zh" data-target="#services">服务与价格</button>
+
+        <button class="nav-link lang-content active" data-lang="en" data-target="#reviews">Customer Reviews</button>
+        <button class="nav-link lang-content" data-lang="de" data-target="#reviews">Kundenbewertungen</button>
+        <button class="nav-link lang-content" data-lang="zh" data-target="#reviews">客户评价</button>
+
+
+        <button class="nav-link lang-content active" data-lang="en" data-target="#siteFooter">Contact</button>
+        <button class="nav-link lang-content" data-lang="de" data-target="#siteFooter">Kontakt</button>
+        <button class="nav-link lang-content" data-lang="zh" data-target="#siteFooter">联系方式</button>
+
+        <button class="nav-link lang-content active" data-lang="en" data-target="#faq">FAQ</button>
+        <button class="nav-link lang-content" data-lang="de" data-target="#faq">Häufige Fragen</button>
+        <button class="nav-link lang-content" data-lang="zh" data-target="#faq">常见问题</button>
+    </div>
+    <!-- 法律弹窗遮罩 -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="legal-page-wrap" id="impressumBox">
+            <h2>Impressum</h2>
+            <p>BoMassage Bobin Wu</p>
+            <p>An d. Stemmerwiese, 81373 München-Sendling</p>
+            <p>Kontakt: WhatsApp +49 152 032 6639 | E-Mail: bobwoo007@gmail.com</p>
+            <p>Umsatzsteuer-ID: Auf Anfrage</p>
+        </div>
+        <div class="legal-page-wrap" id="datenschutzBox">
+            <h2>Datenschutzerklärung</h2>
+            <p>Wir nehmen den Schutz Ihrer persönlichen Daten sehr ernst. Ihre personenbezogenen Daten werden vertraulich und entsprechend der gesetzlichen Datenschutzvorschriften sowie dieser Datenschutzerklärung behandelt.</p>
+            <ul>
+                <li>Es werden keine Kundendaten an Dritte weitergegeben</li>
+                <li>Buchungsdaten werden nur zur Terminabstimmung verwendet</li>
+                <li>Sie haben jederzeit das Recht auf Auskunft, Löschung Ihrer Daten</li>
+            </ul>
+        </div>
+    </div>
+    <div class="image-lightbox" id="imageLightbox">
+        <button class="image-lightbox-close" id="imageLightboxClose">&times;</button>
+        <img id="imageLightboxImg" src="" alt="WhatsApp chat screenshot">
+    </div>
+    <div class="voucher-modal" id="voucherModal">
+        <div class="voucher-modal-box">
+            <button class="voucher-modal-close" id="voucherModalClose">&times;</button>
+            <div class="voucher-modal-title lang-content active" data-lang="en">Choose Your Voucher Design</div>
+            <div class="voucher-modal-title lang-content" data-lang="de">Wählen Sie Ihr Gutschein-Design</div>
+            <div class="voucher-modal-title lang-content" data-lang="zh">选择您喜欢的按摩券样式</div>
+            <div class="voucher-grid"><img src="assets/voucher-1.jpg" alt="Voucher design 1"><img src="assets/voucher-2.jpg" alt="Voucher design 2"><img src="assets/voucher-3.jpg" alt="Voucher design 3"><img src="assets/voucher-4.jpg" alt="Voucher design 4"></div>
+        </div>
+    </div>
+    <header id="mainHeader">
+        <div class="brand-logo" id="brandLogo"><img src="assets/logo.png" alt="BoMassage" class="brand-logo-img"> <span class="brand-logo-text"><span class="brand-logo-line1">Massage</span><span class="brand-logo-line2">in Munich</span></span></div>
+        <div class="nav-group">
+            <div class="lang-dropdown-wrap">
+                <button class="lang-current">EN <i class="fas fa-chevron-down"></i></button>
+                <div class="lang-dropdown-list">
+                    <button class="lang-option active" data-lang="en" data-show="EN">EN</button>
+                    <button class="lang-option" data-lang="de" data-show="DE">DE</button>
+                    <button class="lang-option" data-lang="zh" data-show="CN">CN</button>
+                </div>
+            </div>
+            <button class="hamburger-btn" id="hamburgerBtn" aria-label="Open menu"><i class="fas fa-bars"></i></button>
+        </div>
+    </header>
+    <section class="hero-banner" id="home">
+        <div class="hero-slide active" style="background-image:url('assets/hero-1.jpg')"></div>
+        <div class="hero-slide" style="background-image:url('assets/hero-2.jpg')"></div>
+        <div class="hero-slide" style="background-image:url('assets/hero-3.jpg')"></div>
+        <div class="hero-dots" id="heroDots"></div>
+        <div class="hero-text-wrap">
+            <div class="lang-content active" data-lang="en">
+                <h2 class="hero-main-heading">About me</h2>
+                <div class="hero-desc-text">
+                    I'm Bobin, originally from China. In 2023 I left my job to travel the world, and it was in Thailand that I discovered my love for massage therapy, completing systematic professional training at the Wat Pho Massage School in Bangkok. Through continuous hands-on practice, I became a certified massage therapist in 2024, and to date I've performed more than 500 massages.<br><br>
+                    I have a genuine passion for giving massage — for me it's not just a job, but a healthy way of life.<br><br>
+                    Drawing on a deep understanding of massage technique and body structure, I tailor each treatment to the individual, helping you release accumulated stress, relieve physical fatigue, and calm inner anxiety.
+                </div>
+            </div>
+            <div class="lang-content" data-lang="de">
+                <h2 class="hero-main-heading">Über mich</h2>
+                <div class="hero-desc-text">
+                    Ich bin Bobin, ursprünglich aus China. 2023 habe ich meinen Job gekündigt, um die Welt zu bereisen, und in Thailand meine Leidenschaft für Massage entdeckt. Ich habe eine systematische, professionelle Ausbildung an der Wat Pho Massage Schule in Bangkok absolviert. Durch stetige praktische Erfahrung bin ich seit 2024 zertifizierter Masseur und habe bis heute mehr als 500 Massagen durchgeführt.<br><br>
+                    Ich liebe es von Herzen, Massagen zu geben — für mich ist es nicht nur ein Beruf, sondern ein gesunder Lebensstil.<br><br>
+                    Auf Basis eines tiefen Verständnisses für Massagetechnik und Körperstruktur gestalte ich jede Behandlung individuell auf Sie zugeschnitten und helfe Ihnen, angesammelten Stress abzubauen, körperliche Erschöpfung zu lindern und innere Unruhe zu besänftigen.
+                </div>
+            </div>
+            <div class="lang-content" data-lang="zh">
+                <h2 class="hero-main-heading">关于我</h2>
+                <div class="hero-desc-text">
+                    我是Bobin，祖籍中国。2023年辞去本职工作开启环球旅行，在泰国邂逅按摩疗愈，并于曼谷卧佛寺按摩学院完成系统专业培训。经过长期实操打磨，2024年正式成为持证按摩理疗师，截止目前至少进行多于500次的按摩。<br><br>
+                    我由衷热爱给予按摩，对我来说它不仅仅是一份工作，也是我的一种健康的生活方式！<br><br>
+                    我会基于对按摩和身体结构的深刻理解，通过为每个人量身定制的疗法，帮助您消解积攒的压力、舒缓身体疲惫、平复内心焦虑。
+                </div>
+            </div>
+        </div>
+    </section>
+    <main class="container" style="background: linear-gradient(to bottom, var(--teal-mid) 0%, rgba(104,152,157,0) 220px); background-repeat: no-repeat;">
+        <section id="services" class="section-spacing scroll-animate delay-1">
+            <div class="lang-content active" data-lang="en">
+                <h2 class="main-title">Treatments & Prices</h2>
+                <p class="price-intro">Same rates for all massage types:</p>
+                <details class="duration-guide">
+                    <summary class="price-summary"><span class="price-num"><b>60 Min – 65 € | 90 Min – 90 € | 120 Min – 120 €</b></span><i class="fa-solid fa-chevron-down"></i></summary>
+                    <div class="duration-guide-content">
+                        <p>All treatments can be done as a targeted or full-body massage. Recommended durations are as follows:</p>
+                        <p><b>60 minutes</b> — Targets areas of tension, easing everyday muscle stiffness and restoring physical comfort.</p>
+                        <p><b>90 minutes</b> — Covers the affected area and surrounding muscle groups for a more thorough, complete relaxation.</p>
+                        <p><b>120 minutes</b> — Conditions the body's major muscle groups, delivering deep release and full-body relaxation.</p>
+                    </div>
+                </details>
+            </div>
+            <div class="lang-content" data-lang="de">
+                <h2 class="main-title">Behandlungen & Preise</h2>
+                <p class="price-intro">Einheitspreis für alle Massagen:</p>
+                <details class="duration-guide">
+                    <summary class="price-summary"><span class="price-num"><b>60 Min – 65 € | 90 Min – 90 € | 120 Min – 120 €</b></span><i class="fa-solid fa-chevron-down"></i></summary>
+                    <div class="duration-guide-content">
+                        <p>Jede Behandlung kann gezielt oder als Ganzkörpermassage durchgeführt werden. Empfohlene Dauer:</p>
+                        <p><b>60 Minuten</b> — Zielt auf verspannte Bereiche ab, lindert alltägliche Muskelsteifheit und stellt körperliches Wohlbefinden wieder her.</p>
+                        <p><b>90 Minuten</b> — Behandelt den betroffenen Bereich und die umliegenden Muskelgruppen für eine gründlichere, vollständigere Entspannung.</p>
+                        <p><b>120 Minuten</b> — Behandelt die wichtigsten Muskelgruppen des gesamten Körpers und sorgt für tiefe Lösung und ganzheitliche Entspannung.</p>
+                    </div>
+                </details>
+            </div>
+            <div class="lang-content" data-lang="zh">
+                <h2 class="main-title">服务项目 & 收费标准</h2>
+                <p class="price-intro">全部项目统一价格：</p>
+                <details class="duration-guide">
+                    <summary class="price-summary"><span class="price-num"><b>60分钟 – 65€ ｜ 90分钟 – 90€ ｜ 120分钟 – 120€</b></span><i class="fa-solid fa-chevron-down"></i></summary>
+                    <div class="duration-guide-content">
+                        <p>所有项目可选择局部或全身按摩，根据时长建议如下：</p>
+                        <p><b>60分钟</b> — 针对紧绷部位，舒缓日常积攒的肌肉僵硬，恢复身体舒适状态。</p>
+                        <p><b>90分钟</b> — 覆盖局部及周边关联肌群，放松更充分，体验更完整。</p>
+                        <p><b>120分钟</b> — 调理全身主要肌群，实现身体深层释放，整体舒缓整合。</p>
+                    </div>
+                </details>
+            </div>
+            <div class="services-grid">
+                <div class="service-card scroll-animate delay-1">
+                    <div class="card-img-box has-photo">
+                        <div class="card-icon-badge"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="24" cy="24" r="19"/>
+                            <path d="M16 30 L22 17 L26 26 L32 15"/>
+                        </svg></div>
+                        <img class="card-photo" src="assets/service-deep-tissue.jpg" alt="Deep Tissue & Sports Massage" style="object-position: center 40%;">
+                    </div>
+                    <div class="lang-content active" data-lang="en">
+                        <h3 class="service-name"><i class="fa-solid fa-thumbs-up"></i> Deep Tissue & Sports Massage</h3>
+                        <p class="service-desc">A full-body relaxation massage using oils and firm techniques, with targeted pressure on specific fatigued areas to relieve muscle stiffness and tension.</p>
+                        <div class="service-suitable-title">Who it's for</div>
+                        <ul class="service-suitable-list">
+                        <li>Guests who prefer medium-to-firm pressure</li>
+                        <li>Persistent tension in the back, shoulders or legs</li>
+                        <li>Fatigue from regular exercise or prolonged sitting</li>
+                        </ul>
+                    </div>
+                    <div class="lang-content" data-lang="de">
+                        <h3 class="service-name"><i class="fa-solid fa-thumbs-up"></i> Tiefengewebe- & Sportmassage</h3>
+                        <p class="service-desc">Eine Ganzkörper-Entspannungsmassage mit Ölen und kräftigen Techniken, mit gezieltem Druck auf bestimmte ermüdete Bereiche zur Linderung von Muskelsteifheit und Verspannung.</p>
+                        <div class="service-suitable-title">Wer profitiert</div>
+                        <ul class="service-suitable-list">
+                        <li>Wer mittleren bis kräftigen Druck bevorzugt</li>
+                        <li>Anhaltende Verspannungen in Rücken, Schultern oder Beinen</li>
+                        <li>Erschöpfung durch regelmäßigen Sport oder langes Sitzen</li>
+                        </ul>
+                    </div>
+                    <div class="lang-content" data-lang="zh">
+                        <h3 class="service-name"><i class="fa-solid fa-thumbs-up"></i> 深层和运动按摩</h3>
+                        <p class="service-desc">精油配合有力手法进行整体放松，并对部分疲劳身体部位针对性按压，缓解肌肉僵硬和疲劳。</p>
+                        <div class="service-suitable-title">适合</div>
+                        <ul class="service-suitable-list">
+                            <li>喜欢力度中度以上</li>
+                            <li>持续的背部、肩部或腿部等紧张</li>
+                            <li>长期锻炼或长期久坐</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="service-card scroll-animate delay-2">
+                    <div class="card-img-box has-photo">
+                        <div class="card-icon-badge"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="24" cy="24" r="19"/>
+                            <path d="M13 19 Q18.5 13 24 19 T35 19"/>
+                            <path d="M13 24 Q18.5 18 24 24 T35 24"/>
+                            <path d="M13 29 Q18.5 23 24 29 T35 29"/>
+                        </svg></div>
+                        <img class="card-photo" src="assets/service-aroma.jpg" alt="Aromatherapy Relaxation Massage" style="object-position: center 55%;">
+                    </div>
+                    <div class="lang-content active" data-lang="en">
+                        <h3 class="service-name">Aromatherapy Relaxation Massage</h3>
+                        <p class="service-desc">With the aroma of essential oils and soothing massage techniques, this treatment promotes blood circulation, balances body and mind, and relieves tension.</p>
+                        <div class="service-suitable-title">Who it's for</div>
+                        <ul class="service-suitable-list">
+                        <li>Guests seeking a tranquil experience</li>
+                        <li>Those who enjoy flowing, relaxing massage</li>
+                        <li>Dry or tired skin</li>
+                        </ul>
+                    </div>
+                    <div class="lang-content" data-lang="de">
+                        <h3 class="service-name">Aromatherapie Entspannungsmassage</h3>
+                        <p class="service-desc">Mit dem Duft ätherischer Öle und sanften Massagetechniken fördert diese Behandlung die Durchblutung, bringt Körper und Geist ins Gleichgewicht und löst Anspannung.</p>
+                        <div class="service-suitable-title">Wer profitiert</div>
+                        <ul class="service-suitable-list">
+                        <li>Wer eine ruhige, entspannende Erfahrung sucht</li>
+                        <li>Wer fließende, entspannende Massagen mag</li>
+                        <li>Trockene oder müde Haut</li>
+                        </ul>
+                    </div>
+                    <div class="lang-content" data-lang="zh">
+                        <h3 class="service-name">芳香SPA放松按摩</h3>
+                        <p class="service-desc">借助精油的芳香，舒缓的按摩手法，促进血液循环，平衡身心和缓解紧张。</p>
+                        <div class="service-suitable-title">适合</div>
+                        <ul class="service-suitable-list">
+                        <li>享受宁静体验</li>
+                        <li>喜欢流畅、放松按摩</li>
+                        <li>干燥或疲倦的皮肤</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="service-card scroll-animate delay-3">
+                    <div class="card-img-box has-photo">
+                        <div class="card-icon-badge"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="24" cy="24" r="19"/>
+                            <path d="M24 14 C31 14 34 19 32 24 C30 29 23 29 22 24 C21 20 25 18 28 21"/>
+                        </svg></div>
+                        <img class="card-photo" src="assets/service-healing-touch.jpg" alt="Healing Touch Massage" style="object-position: center 20%;">
+                    </div>
+                    <div class="lang-content active" data-lang="en">
+                        <h3 class="service-name">Healing Touch Massage</h3>
+                        <p class="service-desc">With the aid of singing bowls and healing music, gentle massage strokes and touches allow the body to slowly settle into deep relaxation, reaching a joyful state of "mind-body balance."</p>
+                        <div class="service-suitable-title">Who it's for</div>
+                        <ul class="service-suitable-list">
+                        <li>Those under long-term stress</li>
+                        <li>Guests feeling emotionally tense</li>
+                        <li>Those experiencing low mood</li>
+                        </ul>
+                    </div>
+                    <div class="lang-content" data-lang="de">
+                        <h3 class="service-name">Heilsame Berührungsmassage</h3>
+                        <p class="service-desc">Mit Klangschalen und heilsamer Musik sowie sehr sanften Massagegriffen und Berührungen kommt der Körper langsam zur Ruhe und erreicht eine tiefe Entspannung im Sinne der „Balance von Körper und Geist".</p>
+                        <div class="service-suitable-title">Wer profitiert</div>
+                        <ul class="service-suitable-list">
+                        <li>Bei anhaltendem Stress</li>
+                        <li>Bei emotionaler Anspannung</li>
+                        <li>Bei gedrückter Stimmung</li>
+                        </ul>
+                    </div>
+                    <div class="lang-content" data-lang="zh">
+                        <h3 class="service-name">疗愈按摩</h3>
+                        <p class="service-desc">借助钵和疗愈音乐，用柔和的按摩手法或抚摸，让身体缓缓沉静，深度放松，达到"身心平衡"的愉悦。</p>
+                        <div class="service-suitable-title">适合</div>
+                        <ul class="service-suitable-list">
+                        <li>长期压力大</li>
+                        <li>情绪紧绷</li>
+                        <li>情绪低落</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="service-card scroll-animate delay-4">
+                    <div class="card-img-box has-photo">
+                        <div class="card-icon-badge"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="24" cy="24" r="19"/>
+                            <circle cx="24" cy="24" r="12"/>
+                            <circle cx="24" cy="24" r="5"/>
+                        </svg></div>
+                        <img class="card-photo" src="assets/service-thai.jpg" alt="Thai & Traditional Asian Massage" style="object-position: center 35%;">
+                    </div>
+                    <div class="lang-content active" data-lang="en">
+                        <h3 class="service-name">Thai & Traditional Asian Massage (Oil-Free)</h3>
+                        <p class="service-desc">Traditional Thai massage combined with Chinese tuina, using rhythmic pressure and guided stretching to release tension, working along the body's energy lines.</p>
+                        <div class="service-suitable-title">Who it's for</div>
+                        <ul class="service-suitable-list">
+                        <li>Overall muscle tension and stiffness</li>
+                        <li>Localized body pain</li>
+                        <li>Guests who prefer massage without oil</li>
+                        </ul>
+                    </div>
+                    <div class="lang-content" data-lang="de">
+                        <h3 class="service-name">Thai- & Traditionelle Asiatische Massage (Ohne Öl)</h3>
+                        <p class="service-desc">Traditionelle Thai-Massage kombiniert mit chinesischer Tuina, mit rhythmischem Druck und geführten Dehnungen zur Lösung von Verspannungen entlang der Energielinien des Körpers.</p>
+                        <div class="service-suitable-title">Wer profitiert</div>
+                        <ul class="service-suitable-list">
+                        <li>Allgemeine Muskelverspannung und Steifheit</li>
+                        <li>Lokale Körperschmerzen</li>
+                        <li>Gäste, die eine Massage ohne Öl bevorzugen</li>
+                        </ul>
+                    </div>
+                    <div class="lang-content" data-lang="zh">
+                        <h3 class="service-name">泰式中式融合按摩（无油）</h3>
+                        <p class="service-desc">传统泰式融合中式推拿，以有节奏的按压以及引导式拉伸来舒缓紧绷的部位，作用于身体的能量线。</p>
+                        <div class="service-suitable-title">适合</div>
+                        <ul class="service-suitable-list">
+                        <li>全身肌肉紧张和僵硬</li>
+                        <li>身体部位疼痛</li>
+                        <li>喜欢无油按摩</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="service-card scroll-animate delay-1">
+                    <div class="card-img-box">
+                        <div class="card-icon-badge"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="24" cy="24" r="19"/>
+                            <path d="M24 24 L24 9 M24 24 L35.8 12.2 M24 24 L39 24 M24 24 L35.8 35.8 M24 24 L24 39 M24 24 L12.2 35.8 M24 24 L9 24 M24 24 L12.2 12.2"/>
+                        </svg></div>
+                        <svg width="220" height="220" viewBox="0 0 220" fill="none">
+                            <circle cx="110" cy="110" r="75" stroke="var(--pale-teal)" stroke-width="2" fill="none" />
+                            <path d="M80,110 L 140,110 M110,80 L 110,140" stroke="#fff" stroke-width="1.6" opacity="0.45" />
+                            <path d="M60,160 Q 110,190 160,160" stroke="var(--teal-mid)" stroke-width="1.5" fill="none" opacity="0.5" />
+                        </svg>
+                    </div>
+                    <div class="lang-content active" data-lang="en">
+                        <h3 class="service-name">Custom Massage Tailored For You</h3>
+                        <p class="service-desc">If none of the treatments above fully fit your needs, contact me anytime. I will design the perfect massage according to your requirements.</p>
+                        <div class="service-suitable-title">Who it's for</div>
+                        <ul class="service-suitable-list">
+                        <li>Special massage requests</li>
+                        <li>A combination of the above massage types</li>
+                        <li>Custom session durations</li>
+                        </ul>
+                    </div>
+                    <div class="lang-content" data-lang="de">
+                        <h3 class="service-name">Individuell angepasste Massage</h3>
+                        <p class="service-desc">Passt keine der Behandlungen zu Ihnen? Schreiben Sie mir gerne, ich gestalte eine auf Sie abgestimmte Massage.</p>
+                        <div class="service-suitable-title">Wer profitiert</div>
+                        <ul class="service-suitable-list">
+                        <li>Besondere Massagewünsche</li>
+                        <li>Eine Kombination der oben genannten Massagearten</li>
+                        <li>Individuelle Behandlungsdauer</li>
+                        </ul>
+                    </div>
+                    <div class="lang-content" data-lang="zh">
+                        <h3 class="service-name">专属定制按摩方案</h3>
+                        <p class="service-desc">如若以上项目不完全符合您的需要，可随时联系我，我将基于您的需求设计最适合您的按摩类型</p>
+                        <div class="service-suitable-title">适合人群</div>
+                        <ul class="service-suitable-list">
+                        <li>特殊按摩需求</li>
+                        <li>以上按摩类型混合</li>
+                        <li>特殊按摩时长</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="reviews" class="section-spacing scroll-animate delay-2">
+            <div class="lang-content active" data-lang="en">
+                <h2 class="main-title">What my guests say</h2>
+                <p style="font-size:var(--fs-sm);color:var(--pale-teal);margin-bottom:2rem;">Genuine customer reviews — names and avatars anonymized for privacy.</p>
+            </div>
+            <div class="lang-content" data-lang="de">
+                <h2 class="main-title">Was meine Gäste sagen</h2>
+                <p style="font-size:var(--fs-sm);color:var(--pale-teal);margin-bottom:2rem;">Echte Kundenbewertungen – Namen und Avatare zum Datenschutz anonymisiert.</p>
+            </div>
+            <div class="lang-content" data-lang="zh">
+                <h2 class="main-title">客人真实体验评价</h2>
+                <p style="font-size:var(--fs-sm);color:var(--pale-teal);margin-bottom:2rem;">顾客的真实留言，人名和头像已做隐私处理。</p>
+            </div>
+            <div class="review-grid" id="reviewGrid">
+                <div class="review-card">
+                    <div class="lang-content active" data-lang="en"><div class="review-top"><div class="review-avatar" style="background-image:url('assets/avatar-1.jpg')"></div><div class="review-top-text"><p class="review-author">Tors.</p><p class="review-date">via WhatsApp</p></div></div><p class="review-content">"Hey Bobin, just wanted to let you know. Your massage worked great. Was almost pain-free today. My therapist said that all the muscles, which are usually tense, were nice and loose. He only treated two small muscles and corrected the pelvic obliquity a bit. So what you did yesterday worked great. Thanks a lot. See you next time."</p><button class="review-chat-link" data-review="1" title="View WhatsApp chat" aria-label="View WhatsApp chat">Read full review <i class="fa-solid fa-arrow-right"></i></button></div>
+                    <div class="lang-content" data-lang="de"><div class="review-top"><div class="review-avatar" style="background-image:url('assets/avatar-1.jpg')"></div><div class="review-top-text"><p class="review-author">Tors.</p><p class="review-date">via WhatsApp</p></div></div><p class="review-content">"Hey Bobin, just wanted to let you know. Your massage worked great. Was almost pain-free today. My therapist said that all the muscles, which are usually tense, were nice and loose. He only treated two small muscles and corrected the pelvic obliquity a bit. So what you did yesterday worked great. Thanks a lot. See you next time."</p><button class="review-chat-link" data-review="1" title="WhatsApp-Chat ansehen" aria-label="WhatsApp-Chat ansehen">Vollständige Bewertung lesen <i class="fa-solid fa-arrow-right"></i></button></div>
+                    <div class="lang-content" data-lang="zh"><div class="review-top"><div class="review-avatar" style="background-image:url('assets/avatar-1.jpg')"></div><div class="review-top-text"><p class="review-author">Tors.</p><p class="review-date">via WhatsApp</p></div></div><p class="review-content">"Hey Bobin, just wanted to let you know. Your massage worked great. Was almost pain-free today. My therapist said that all the muscles, which are usually tense, were nice and loose. He only treated two small muscles and corrected the pelvic obliquity a bit. So what you did yesterday worked great. Thanks a lot. See you next time."</p><button class="review-chat-link" data-review="1" title="查看聊天记录" aria-label="查看聊天记录">查看完整评价 <i class="fa-solid fa-arrow-right"></i></button></div>
+                </div>
+                <div class="review-card">
+                    <div class="lang-content active" data-lang="en"><div class="review-top"><div class="review-avatar" style="background-image:url('assets/avatar-2.jpg')"></div><div class="review-top-text"><p class="review-author">Stev.</p><p class="review-date">via WhatsApp</p></div></div><p class="review-content">"Hey Bobin, Just wanted to thank you for the massage. I am feeling really good and totally relaxed 🙏 Have a great weekend and all the best for you. Hope to see you again …."</p><button class="review-chat-link" data-review="2" title="View WhatsApp chat" aria-label="View WhatsApp chat">Read full review <i class="fa-solid fa-arrow-right"></i></button></div>
+                    <div class="lang-content" data-lang="de"><div class="review-top"><div class="review-avatar" style="background-image:url('assets/avatar-2.jpg')"></div><div class="review-top-text"><p class="review-author">Stev.</p><p class="review-date">via WhatsApp</p></div></div><p class="review-content">"Hey Bobin, Just wanted to thank you for the massage. I am feeling really good and totally relaxed 🙏 Have a great weekend and all the best for you. Hope to see you again …."</p><button class="review-chat-link" data-review="2" title="WhatsApp-Chat ansehen" aria-label="WhatsApp-Chat ansehen">Vollständige Bewertung lesen <i class="fa-solid fa-arrow-right"></i></button></div>
+                    <div class="lang-content" data-lang="zh"><div class="review-top"><div class="review-avatar" style="background-image:url('assets/avatar-2.jpg')"></div><div class="review-top-text"><p class="review-author">Stev.</p><p class="review-date">via WhatsApp</p></div></div><p class="review-content">"Hey Bobin, Just wanted to thank you for the massage. I am feeling really good and totally relaxed 🙏 Have a great weekend and all the best for you. Hope to see you again …."</p><button class="review-chat-link" data-review="2" title="查看聊天记录" aria-label="查看聊天记录">查看完整评价 <i class="fa-solid fa-arrow-right"></i></button></div>
+                </div>
+                <div class="review-card">
+                    <div class="lang-content active" data-lang="en"><div class="review-top"><div class="review-avatar" style="background-image:url('assets/avatar-3.jpg')"></div><div class="review-top-text"><p class="review-author">Manf.</p><p class="review-date">via WhatsApp</p></div></div><p class="review-content">"Lieber Bob, vielen ehrlichen Dank für deine so großartige Massage und deine so angenehmen Berührungen, die mir so unglaublich gut tun und mir unglaublich viel Kraft Energie und Motivation geben. Du bedeutest mir unglaublich viel. Ganz ganz ehrlich und du bist und warst für mich in diesen so schwierigen Monate eine unglaubliche mentale Unterstützung. Lg"</p><button class="review-chat-link" data-review="3" title="View WhatsApp chat" aria-label="View WhatsApp chat">Read full review <i class="fa-solid fa-arrow-right"></i></button></div>
+                    <div class="lang-content" data-lang="de"><div class="review-top"><div class="review-avatar" style="background-image:url('assets/avatar-3.jpg')"></div><div class="review-top-text"><p class="review-author">Manf.</p><p class="review-date">via WhatsApp</p></div></div><p class="review-content">"Lieber Bob, vielen ehrlichen Dank für deine so großartige Massage und deine so angenehmen Berührungen, die mir so unglaublich gut tun und mir unglaublich viel Kraft Energie und Motivation geben. Du bedeutest mir unglaublich viel. Ganz ganz ehrlich und du bist und warst für mich in diesen so schwierigen Monate eine unglaubliche mentale Unterstützung. Lg"</p><button class="review-chat-link" data-review="3" title="WhatsApp-Chat ansehen" aria-label="WhatsApp-Chat ansehen">Vollständige Bewertung lesen <i class="fa-solid fa-arrow-right"></i></button></div>
+                    <div class="lang-content" data-lang="zh"><div class="review-top"><div class="review-avatar" style="background-image:url('assets/avatar-3.jpg')"></div><div class="review-top-text"><p class="review-author">Manf.</p><p class="review-date">via WhatsApp</p></div></div><p class="review-content">"Lieber Bob, vielen ehrlichen Dank für deine so großartige Massage und deine so angenehmen Berührungen, die mir so unglaublich gut tun und mir unglaublich viel Kraft Energie und Motivation geben. Du bedeutest mir unglaublich viel. Ganz ganz ehrlich und du bist und warst für mich in diesen so schwierigen Monate eine unglaubliche mentale Unterstützung. Lg"</p><button class="review-chat-link" data-review="3" title="查看聊天记录" aria-label="查看聊天记录">查看完整评价 <i class="fa-solid fa-arrow-right"></i></button></div>
+                </div>
+                <div class="review-card">
+                    <div class="lang-content active" data-lang="en"><div class="review-top"><div class="review-avatar" style="background-image:url('assets/avatar-4.jpg')"></div><div class="review-top-text"><p class="review-author">F.S</p><p class="review-date">via WhatsApp</p></div></div><p class="review-content">"Hey Bobin! Your massage was really effective. My muscles were more relaxed afterwards and yesterday at the gym I felt much less tension in my shoulders. So thanks again!"</p><button class="review-chat-link" data-review="4" title="View WhatsApp chat" aria-label="View WhatsApp chat">Read full review <i class="fa-solid fa-arrow-right"></i></button></div>
+                    <div class="lang-content" data-lang="de"><div class="review-top"><div class="review-avatar" style="background-image:url('assets/avatar-4.jpg')"></div><div class="review-top-text"><p class="review-author">F.S</p><p class="review-date">via WhatsApp</p></div></div><p class="review-content">"Hey Bobin! Your massage was really effective. My muscles were more relaxed afterwards and yesterday at the gym I felt much less tension in my shoulders. So thanks again!"</p><button class="review-chat-link" data-review="4" title="WhatsApp-Chat ansehen" aria-label="WhatsApp-Chat ansehen">Vollständige Bewertung lesen <i class="fa-solid fa-arrow-right"></i></button></div>
+                    <div class="lang-content" data-lang="zh"><div class="review-top"><div class="review-avatar" style="background-image:url('assets/avatar-4.jpg')"></div><div class="review-top-text"><p class="review-author">F.S</p><p class="review-date">via WhatsApp</p></div></div><p class="review-content">"Hey Bobin! Your massage was really effective. My muscles were more relaxed afterwards and yesterday at the gym I felt much less tension in my shoulders. So thanks again!"</p><button class="review-chat-link" data-review="4" title="查看聊天记录" aria-label="查看聊天记录">查看完整评价 <i class="fa-solid fa-arrow-right"></i></button></div>
+                </div>
+                <div class="review-card">
+                    <div class="lang-content active" data-lang="en"><div class="review-top"><div class="review-avatar" style="background-image:url('assets/avatar-5.jpg')"></div><div class="review-top-text"><p class="review-author">Stef.</p><p class="review-date">via WhatsApp</p></div></div><p class="review-content">"Thank you 🙏 I feel so relaxed now. After my tea, I fell asleep for like an hour"</p><button class="review-chat-link" data-review="5" title="View WhatsApp chat" aria-label="View WhatsApp chat">Read full review <i class="fa-solid fa-arrow-right"></i></button></div>
+                    <div class="lang-content" data-lang="de"><div class="review-top"><div class="review-avatar" style="background-image:url('assets/avatar-5.jpg')"></div><div class="review-top-text"><p class="review-author">Stef.</p><p class="review-date">via WhatsApp</p></div></div><p class="review-content">"Thank you 🙏 I feel so relaxed now. After my tea, I fell asleep for like an hour"</p><button class="review-chat-link" data-review="5" title="WhatsApp-Chat ansehen" aria-label="WhatsApp-Chat ansehen">Vollständige Bewertung lesen <i class="fa-solid fa-arrow-right"></i></button></div>
+                    <div class="lang-content" data-lang="zh"><div class="review-top"><div class="review-avatar" style="background-image:url('assets/avatar-5.jpg')"></div><div class="review-top-text"><p class="review-author">Stef.</p><p class="review-date">via WhatsApp</p></div></div><p class="review-content">"Thank you 🙏 I feel so relaxed now. After my tea, I fell asleep for like an hour"</p><button class="review-chat-link" data-review="5" title="查看聊天记录" aria-label="查看聊天记录">查看完整评价 <i class="fa-solid fa-arrow-right"></i></button></div>
+                </div>
+            </div>
+            <div class="review-dots" id="reviewDots"></div>
+        </section>
+        <section class="section-spacing faq-section-bottom scroll-animate delay-4" id="faq">
+            <div class="lang-content active" data-lang="en">
+                <h2 class="main-title">Frequently Asked Questions</h2>
+            </div>
+            <div class="lang-content" data-lang="de">
+                <h2 class="main-title">Häufig gestellte Fragen</h2>
+            </div>
+            <div class="lang-content" data-lang="zh">
+                <h2 class="main-title">常见问题</h2>
+            </div>
+            <div class="promise-list">
+                <div class="promise-item scroll-animate delay-1">
+                    <div class="promise-icon"><i class="fa-solid fa-house-chimney"></i></div>
+                    <div class="promise-text">
+                        <div class="lang-content active" data-lang="en">
+                            <h3 class="promise-title">Do you offer home massage visits across Munich?</h3>
+                            <p class="promise-desc">Yes, home service available at your apartment, office or hotel. Extra fee 10-20 € depending on distance.</p>
+                        </div>
+                        <div class="lang-content" data-lang="de">
+                            <h3 class="promise-title">Biete ich Hausbesuche in München an?</h3>
+                            <p class="promise-desc">Ja, Hausbesuche in Wohnung, Büro oder Hotel möglich. Zusatzkosten 10–20 € je nach Entfernung.</p>
+                        </div>
+                        <div class="lang-content" data-lang="zh">
+                            <h3 class="promise-title">慕尼黑可以提供上门按摩服务吗？</h3>
+                            <p class="promise-desc">可以，可前往住宅、办公室、酒店上门服务，根据距离加收10-20欧元上门费用。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="promise-item scroll-animate delay-2">
+                    <div class="promise-icon"><i class="fa-solid fa-circle-info"></i></div>
+                    <div class="promise-text">
+                        <div class="lang-content active" data-lang="en">
+                            <h3 class="promise-title">Is this medical therapeutic massage?</h3>
+                            <p class="promise-desc">No, it is purely wellness relaxation massage for stress relief, not medical treatment.</p>
+                        </div>
+                        <div class="lang-content" data-lang="de">
+                            <h3 class="promise-title">Ist dies eine medizinische Therapiemassage?</h3>
+                            <p class="promise-desc">Nein, reine Entspannungsmassage zur Erholung, keine medizinische Behandlung.</p>
+                        </div>
+                        <div class="lang-content" data-lang="zh">
+                            <h3 class="promise-title">属于医疗理疗按摩吗？</h3>
+                            <p class="promise-desc">不属于医疗治疗范畴，仅为放松舒缓身心的康养按摩。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="promise-item scroll-animate delay-3">
+                    <div class="promise-icon"><i class="fa-solid fa-calendar-check"></i></div>
+                    <div class="promise-text">
+                        <div class="lang-content active" data-lang="en">
+                            <h3 class="promise-title">How can I book an appointment?</h3>
+                            <p class="promise-desc">Booking via WhatsApp is easiest. We will confirm time, location and massage type together.</p>
+                        </div>
+                        <div class="lang-content" data-lang="de">
+                            <h3 class="promise-title">Wie kann ich einen Termin buchen?</h3>
+                            <p class="promise-desc">Am besten über WhatsApp buchen, wir vereinbaren gemeinsam alle Details.</p>
+                        </div>
+                        <div class="lang-content" data-lang="zh">
+                            <h3 class="promise-title">如何预约按摩？</h3>
+                            <p class="promise-desc">最佳方式通过WhatsApp沟通，双方敲定时间、地点以及按摩项目即可。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="promise-item scroll-animate delay-4">
+                    <div class="promise-icon"><i class="fa-solid fa-list-check"></i></div>
+                    <div class="promise-text">
+                        <div class="lang-content active" data-lang="en">
+                            <h3 class="promise-title">What preparations do I need before the appointment?</h3>
+                            <p class="promise-desc">Please avoid eating heavy meals one hour before massage. Wear loose comfortable clothes. Shower beforehand is recommended for better experience.</p>
+                        </div>
+                        <div class="lang-content" data-lang="de">
+                            <h3 class="promise-title">Welche Vorbereitungen muss ich vor dem Termin treffen?</h3>
+                            <p class="promise-desc">Bitte eine Stunde vor der Massage keine große Mahlzeit essen. Trage lockere Kleidung, vorheriges Duschen wird empfohlen.</p>
+                        </div>
+                        <div class="lang-content" data-lang="zh">
+                            <h3 class="promise-title">预约前需要准备什么？</h3>
+                            <p class="promise-desc">按摩前1小时不要吃得过饱，穿着宽松衣物，提前沐浴会让体验更佳。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="promise-item scroll-animate delay-5">
+                    <div class="promise-icon"><i class="fa-solid fa-euro-sign"></i></div>
+                    <div class="promise-text">
+                        <div class="lang-content active" data-lang="en">
+                            <h3 class="promise-title">Is the service only for private paying customers?</h3>
+                            <p class="promise-desc">Yes, only private payment accepted. Health insurance cannot cover this wellness massage service.</p>
+                        </div>
+                        <div class="lang-content" data-lang="de">
+                            <h3 class="promise-title">Ist der Service nur für selbstzahlende Kunden verfügbar?</h3>
+                            <p class="promise-desc">Ja, nur Selbstzahlung möglich. Die Krankenkasse übernimmt keine Kosten für diese Wellnessmassage.</p>
+                        </div>
+                        <div class="lang-content" data-lang="zh">
+                            <h3 class="promise-title">服务仅面向自费顾客吗？</h3>
+                            <p class="promise-desc">是的，仅支持自费支付，德国医保无法报销该康养按摩服务。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="promise-item scroll-animate delay-6">
+                    <div class="promise-icon"><i class="fa-solid fa-shirt"></i></div>
+                    <div class="promise-text">
+                        <div class="lang-content active" data-lang="en">
+                            <h3 class="promise-title">Will I be naked?</h3>
+                            <p class="promise-desc">Depends. You will be wearing comfortable clothes for Thai & Traditional Asian Massage, but you will be naked or partially naked for other massages with oil.</p>
+                        </div>
+                        <div class="lang-content" data-lang="de">
+                            <h3 class="promise-title">Muss ich mich vollständig ausziehen?</h3>
+                            <p class="promise-desc">Das hängt von der Massageart ab. Bei Thai-Massage tragen Sie bequeme Kleidung, bei allen Ölmassagen sind Sie ganz oder teilweise unbekleidet.</p>
+                        </div>
+                        <div class="lang-content" data-lang="zh">
+                            <h3 class="promise-title">按摩需要全裸吗？</h3>
+                            <p class="promise-desc">视按摩项目而定：泰式推拿全程可穿着宽松衣物；其余精油类按摩需要全裸或半裸进行。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="promise-item scroll-animate delay-7">
+                    <div class="promise-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                    <div class="promise-text">
+                        <div class="lang-content active" data-lang="en">
+                            <h3 class="promise-title">Do you offer sexual services?</h3>
+                            <p class="promise-desc">No, I don't do any sexual services！！</p>
+                        </div>
+                        <div class="lang-content" data-lang="de">
+                            <h3 class="promise-title">Bieten Sie erotische oder sexuelle Dienstleistungen an?</h3>
+                            <p class="promise-desc">Nein, ich biete keinerlei sexuellen Dienstleistungen an!!</p>
+                        </div>
+                        <div class="lang-content" data-lang="zh">
+                            <h3 class="promise-title">是否提供色情相关服务？</h3>
+                            <p class="promise-desc">绝不提供任何色情、性相关服务！！</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="promise-item scroll-animate delay-8">
+                    <div class="promise-icon"><i class="fa-solid fa-gift"></i></div>
+                    <div class="promise-text">
+                        <div class="lang-content active" data-lang="en">
+                            <h3 class="promise-title">Can I gift someone a massage voucher?</h3>
+                            <p class="promise-desc">Yes! Choose your favorite <button class="voucher-trigger">voucher design <i class="fa-solid fa-images"></i></button> — I'll mail it to you or you can pick it up, free of charge. The recipient can then book their own appointment following the simple instructions on the voucher.</p>
+                        </div>
+                        <div class="lang-content" data-lang="de">
+                            <h3 class="promise-title">Kann ich einen Massage-Gutschein verschenken?</h3>
+                            <p class="promise-desc">Ja! Wählen Sie Ihr bevorzugtes <button class="voucher-trigger">Gutschein-Design <i class="fa-solid fa-images"></i></button> — ich schicke ihn Ihnen zu oder Sie holen ihn ab, ohne Aufpreis. Die beschenkte Person kann anhand der einfachen Anleitung auf dem Gutschein selbst einen Termin buchen.</p>
+                        </div>
+                        <div class="lang-content" data-lang="zh">
+                            <h3 class="promise-title">是否可以赠送别人"按摩券"</h3>
+                            <p class="promise-desc">您可以选择您喜欢的<button class="voucher-trigger">按摩券样式 <i class="fa-solid fa-images"></i></button>，我将为您寄出或自取，不额外收费。之后赠送人根据按摩券上的简单指引自行预约。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer id="siteFooter">
+        <div class="footer-columns">
+            <div class="footer-col">
+                <div class="lang-content active" data-lang="en"><div class="footer-col-title">Contact</div></div>
+                <div class="lang-content" data-lang="de"><div class="footer-col-title">Kontakt</div></div>
+                <div class="lang-content" data-lang="zh"><div class="footer-col-title">联系方式</div></div>
+                <div class="footer-col-item"><i class="fa-solid fa-location-dot"></i><a href="https://www.google.com/maps/search/?api=1&query=An+d.+Stemmerwiese,+81373+München-Sendling" target="_blank" rel="noopener noreferrer">An d. Stemmerwiese, 81373 München-Sendling</a></div>
+                <div class="footer-col-item"><i class="fa-solid fa-envelope"></i><a href="mailto:bobwoo007@gmail.com">bobwoo007@gmail.com</a></div>
+                <div class="footer-col-item"><i class="fa-brands fa-whatsapp"></i><a href="https://wa.me/4915203246639" target="_blank" rel="noopener noreferrer">+49 152 03246639</a></div>
+                <div class="footer-social-row">
+                    <a href="https://wa.me/4915203246639" target="_blank" rel="noopener noreferrer" class="footer-social-icon" aria-label="Contact via WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="https://instagram.com/bobin.ng" target="_blank" rel="noopener noreferrer" class="footer-social-icon" aria-label="Visit Instagram profile"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <div class="lang-content active" data-lang="en"><div class="footer-col-title">Opening Hours</div></div>
+                <div class="lang-content" data-lang="de"><div class="footer-col-title">Öffnungszeiten</div></div>
+                <div class="lang-content" data-lang="zh"><div class="footer-col-title">营业时间</div></div>
+                <div class="lang-content active" data-lang="en">
+                    <div class="footer-col-item"><i class="fa-solid fa-clock"></i>Mon – Sun 10:00 – 21:00</div>
+                    <div class="footer-col-item"><i class="fa-solid fa-calendar-check"></i>By appointment only</div>
+                </div>
+                <div class="lang-content" data-lang="de">
+                    <div class="footer-col-item"><i class="fa-solid fa-clock"></i>Mo – So 10:00 – 21:00</div>
+                    <div class="footer-col-item"><i class="fa-solid fa-calendar-check"></i>Nur nach Terminvereinbarung</div>
+                </div>
+                <div class="lang-content" data-lang="zh">
+                    <div class="footer-col-item"><i class="fa-solid fa-clock"></i>周一至周日 10:00 – 21:00</div>
+                    <div class="footer-col-item"><i class="fa-solid fa-calendar-check"></i>仅接受预约</div>
+                </div>
+            </div>
+            <div class="footer-col">
+                <div class="lang-content active" data-lang="en"><div class="footer-col-title">Legal</div></div>
+                <div class="lang-content" data-lang="de"><div class="footer-col-title">Rechtliches</div></div>
+                <div class="lang-content" data-lang="zh"><div class="footer-col-title">法律信息</div></div>
+                <div class="footer-col-item"><i class="fa-solid fa-file-lines"></i><button id="openImpressum" class="footer-inline-link">Impressum</button></div>
+                <div class="footer-col-item"><i class="fa-solid fa-lock"></i><button id="openDatenschutz" class="footer-inline-link">Datenschutz</button></div>
+            </div>
+        </div>
+        <hr class="footer-divider">
+        <div class="footer-copyright">
+            © 2026 BoMassage München | Alle Rechte vorbehalten
+        </div>
+    </footer>
+    <a href="https://wa.me/4915203246639" target="_blank" rel="noopener noreferrer" class="book-float lang-content active" data-lang="en">
+        <i class="fa-brands fa-whatsapp"></i> Book Now
+    </a>
+    <a href="https://wa.me/4915203246639" target="_blank" rel="noopener noreferrer" class="book-float lang-content" data-lang="de">
+        <i class="fa-brands fa-whatsapp"></i> Termin buchen
+    </a>
+    <a href="https://wa.me/4915203246639" target="_blank" rel="noopener noreferrer" class="book-float lang-content" data-lang="zh">
+        <i class="fa-brands fa-whatsapp"></i> 立即预约
+    </a>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // 1. 侧边汉堡菜单开关
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
+    const sideNav = document.getElementById('sideNav');
+    const navOverlay = document.getElementById('navOverlay');
+    const navLinks = document.querySelectorAll('.nav-link');
+    function openNav() {
+        sideNav.classList.add('open');
+        navOverlay.classList.add('show');
+        document.body.style.overflow = 'hidden';
+    }
+    function closeNav() {
+        sideNav.classList.remove('open');
+        navOverlay.classList.remove('show');
+        document.body.style.overflow = '';
+    }
+    hamburgerBtn.addEventListener('click', openNav);
+    navOverlay.addEventListener('click', closeNav);
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('data-target');
+            const targetEl = document.querySelector(targetId);
+            closeNav();
+            if (targetEl) {
+                targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    });
+    const brandLogo = document.getElementById('brandLogo');
+    brandLogo.addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+    // 1a. Hero 背景图轮播：每3秒自动切换
+    const heroSlides = document.querySelectorAll('.hero-slide');
+    const heroDotsWrap = document.getElementById('heroDots');
+    if (heroSlides.length && heroDotsWrap) {
+        let heroIndex = 0;
+        heroSlides.forEach((slide, i) => {
+            const dot = document.createElement('button');
+            dot.className = 'hero-dot' + (i === 0 ? ' active' : '');
+            dot.setAttribute('aria-label', 'Slide ' + (i + 1));
+            dot.addEventListener('click', () => showHeroSlide(i));
+            heroDotsWrap.appendChild(dot);
+        });
+        const heroDotEls = Array.from(heroDotsWrap.children);
+        function showHeroSlide(i) {
+            heroSlides[heroIndex].classList.remove('active');
+            heroDotEls[heroIndex].classList.remove('active');
+            heroIndex = i;
+            heroSlides[heroIndex].classList.add('active');
+            heroDotEls[heroIndex].classList.add('active');
+        }
+        setInterval(() => {
+            showHeroSlide((heroIndex + 1) % heroSlides.length);
+        }, 3000);
+    }
+    // 1b. 评价区域：手指滑动 + 圆点指示器
+    const reviewGrid = document.getElementById('reviewGrid');
+    const reviewDots = document.getElementById('reviewDots');
+    if (reviewGrid && reviewDots) {
+        const reviewCards = Array.from(reviewGrid.querySelectorAll('.review-card'));
+        reviewCards.forEach((card, i) => {
+            const dot = document.createElement('button');
+            dot.className = 'review-dot' + (i === 0 ? ' active' : '');
+            dot.setAttribute('aria-label', 'Review ' + (i + 1));
+            dot.addEventListener('click', () => {
+                card.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+            });
+            reviewDots.appendChild(dot);
+        });
+        const dotEls = Array.from(reviewDots.children);
+        function updateActiveDot() {
+            const gridCenter = reviewGrid.scrollLeft + reviewGrid.clientWidth / 2;
+            let closestIndex = 0;
+            let closestDist = Infinity;
+            reviewCards.forEach((card, i) => {
+                const cardCenter = card.offsetLeft + card.offsetWidth / 2;
+                const dist = Math.abs(cardCenter - gridCenter);
+                if (dist < closestDist) {
+                    closestDist = dist;
+                    closestIndex = i;
+                }
+            });
+            dotEls.forEach((d, i) => d.classList.toggle('active', i === closestIndex));
+        }
+        let scrollTimeout;
+        reviewGrid.addEventListener('scroll', () => {
+            clearTimeout(scrollTimeout);
+            scrollTimeout = setTimeout(updateActiveDot, 80);
+        });
+    }
+    // 2. 滚动动画（渐进增强：内容默认可见，JS正常运行时才叠加入场动效）
+    try {
+        const animateItems = document.querySelectorAll('.scroll-animate');
+        animateItems.forEach(item => item.classList.add('pre-animate'));
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    entry.target.classList.remove('pre-animate');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { rootMargin: '0px 0px -80px 0' });
+        animateItems.forEach(item => observer.observe(item));
+    } catch(e) {
+        document.querySelectorAll('.scroll-animate.pre-animate').forEach(item => item.classList.remove('pre-animate'));
+    }
+    // 3. 导航栏滚动磨砂效果
+    const header = document.getElementById('mainHeader');
+    window.addEventListener('scroll', () => {
+        if(window.scrollY > 60) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
+    // 4. 语言下拉 + 三语切换
+    const langBtn = document.querySelector('.lang-current');
+    const langList = document.querySelector('.lang-dropdown-list');
+    const langOptions = document.querySelectorAll('.lang-option');
+    const allLangBlocks = document.querySelectorAll('.lang-content');
+    // 打开关闭下拉
+    langBtn.addEventListener('click', function(e){
+        e.stopPropagation();
+        langList.classList.toggle('open');
+    });
+    // 切换语言逻辑
+    langOptions.forEach(option => {
+        option.addEventListener('click', function(){
+            const targetLang = this.getAttribute('data-lang');
+            const showText = this.getAttribute('data-show');
+            // 更新顶部显示文字
+            langBtn.innerHTML = `${showText} <i class="fas fa-chevron-down"></i>`;
+            // 移除所有active
+            langOptions.forEach(o => o.classList.remove('active'));
+            option.classList.add('active');
+            // 切换页面文字
+            allLangBlocks.forEach(block => {
+                block.classList.toggle('active', block.dataset.lang === targetLang);
+            });
+            // 关闭下拉
+            langList.classList.remove('open');
+        });
+    });
+    // 空白点击关闭下拉
+    document.addEventListener('click', () => langList.classList.remove('open'));
+    // 5. FAQ 手风琴
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(item => {
+        const btn = item.querySelector('.faq-question-btn');
+        btn.addEventListener('click', () => {
+            const isActive = item.classList.contains('active');
+            faqItems.forEach(other => other.classList.remove('active'));
+            if (!isActive) item.classList.add('active');
+        });
+    });
+    // 6. 法律弹窗
+    const modalOverlay = document.getElementById('modalOverlay');
+    const openImpressum = document.getElementById('openImpressum');
+    const openDatenschutz = document.getElementById('openDatenschutz');
+    const impressumBox = document.getElementById('impressumBox');
+    const datenschutzBox = document.getElementById('datenschutzBox');
+    openImpressum.addEventListener('click', e => {
+        e.preventDefault();
+        modalOverlay.classList.add('open');
+        impressumBox.classList.add('show');
+        datenschutzBox.classList.remove('show');
+    });
+    openDatenschutz.addEventListener('click', e => {
+        e.preventDefault();
+        modalOverlay.classList.add('open');
+        datenschutzBox.classList.add('show');
+        impressumBox.classList.remove('show');
+    });
+    modalOverlay.addEventListener('click', e => {
+        if(e.target === modalOverlay) {
+            modalOverlay.classList.remove('open');
+            impressumBox.classList.remove('show');
+            datenschutzBox.classList.remove('show');
+        }
+    });
+    // 评论区：WhatsApp 截图灯箱
+    const imageLightbox = document.getElementById('imageLightbox');
+    const imageLightboxImg = document.getElementById('imageLightboxImg');
+    const imageLightboxClose = document.getElementById('imageLightboxClose');
+    const reviewImages = {
+        1: 'assets/review-screenshot-1.jpg',
+        2: 'assets/review-screenshot-2.jpg',
+        3: 'assets/review-screenshot-3.jpg',
+        4: 'assets/review-screenshot-4.jpg',
+        5: 'assets/review-screenshot-5.jpg',
+    };
+    document.querySelectorAll('.review-chat-link').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const idx = btn.getAttribute('data-review');
+            imageLightboxImg.src = reviewImages[idx];
+            imageLightbox.classList.add('open');
+        });
+    });
+    function closeLightbox() {
+        imageLightbox.classList.remove('open');
+        imageLightboxImg.src = '';
+    }
+    imageLightboxClose.addEventListener('click', closeLightbox);
+    imageLightbox.addEventListener('click', e => {
+        if (e.target === imageLightbox) closeLightbox();
+    });
+    // 按摩券样式预览弹窗
+    const voucherModal = document.getElementById('voucherModal');
+    const voucherModalClose = document.getElementById('voucherModalClose');
+    document.querySelectorAll('.voucher-trigger').forEach(btn => {
+        btn.addEventListener('click', () => voucherModal.classList.add('open'));
+    });
+    voucherModalClose.addEventListener('click', () => voucherModal.classList.remove('open'));
+    voucherModal.addEventListener('click', e => {
+        if (e.target === voucherModal) voucherModal.classList.remove('open');
+    });
+});
+</script>
+</body>
+</html>
