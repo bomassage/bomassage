@@ -938,6 +938,29 @@
                 justify-content: center;
             }
         }
+        .footer-badges {
+            margin-bottom: 1.5rem;
+        }
+        .footer-badges .lang-content.active {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.8rem 1.2rem;
+        }
+        .footer-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            background: rgba(186, 205, 200, 0.1);
+            border: 1px solid rgba(255,255,255,0.15);
+            color: var(--text-tertiary);
+            font-size: var(--fs-sm);
+            padding: 0.4rem 0.9rem;
+            border-radius: 999px;
+        }
+        .footer-badge i {
+            color: var(--accent-icon);
+        }
         .footer-copyright {
             color: var(--text-muted);
             margin-bottom: 0.5rem;
@@ -1752,6 +1775,20 @@
             </div>
         </div>
         <hr class="footer-divider">
+        <div class="footer-badges">
+            <div class="lang-content active" data-lang="en">
+                <span class="footer-badge">🌈 LGBTQ+ Friendly</span>
+                <span class="footer-badge"><i class="fa-solid fa-money-bill-wave"></i> Payment: Cash, PayPal</span>
+            </div>
+            <div class="lang-content" data-lang="de">
+                <span class="footer-badge">🌈 LGBTQ+ freundlich</span>
+                <span class="footer-badge"><i class="fa-solid fa-money-bill-wave"></i> Zahlung: Bar, PayPal</span>
+            </div>
+            <div class="lang-content" data-lang="zh">
+                <span class="footer-badge">🌈 LGBTQ+ 友好</span>
+                <span class="footer-badge"><i class="fa-solid fa-money-bill-wave"></i> 支付方式：现金、PayPal</span>
+            </div>
+        </div>
         <div class="footer-copyright">
             © 2026 BoMassage München | Alle Rechte vorbehalten
         </div>
