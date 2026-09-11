@@ -939,13 +939,11 @@
             }
         }
         .footer-badges {
-            margin-bottom: 1.5rem;
-        }
-        .footer-badges .lang-content.active {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 0.8rem 1.2rem;
+            gap: 1rem 1.6rem;
+            margin-bottom: 1.5rem;
         }
         .footer-badge {
             display: inline-flex;
@@ -1767,27 +1765,27 @@
                 </div>
             </div>
             <div class="footer-col">
-                <div class="lang-content active" data-lang="en"><div class="footer-col-title">Legal</div></div>
-                <div class="lang-content" data-lang="de"><div class="footer-col-title">Rechtliches</div></div>
-                <div class="lang-content" data-lang="zh"><div class="footer-col-title">法律信息</div></div>
-                <div class="footer-col-item"><i class="fa-solid fa-file-lines"></i><button id="openImpressum" class="footer-inline-link">Impressum</button></div>
-                <div class="footer-col-item"><i class="fa-solid fa-lock"></i><button id="openDatenschutz" class="footer-inline-link">Datenschutz</button></div>
+                <div class="lang-content active" data-lang="en"><div class="footer-col-title">Good to Know</div></div>
+                <div class="lang-content" data-lang="de"><div class="footer-col-title">Gut zu wissen</div></div>
+                <div class="lang-content" data-lang="zh"><div class="footer-col-title">温馨提示</div></div>
+                <div class="lang-content active" data-lang="en">
+                    <div class="footer-col-item">🌈 LGBTQ+ Friendly</div>
+                    <div class="footer-col-item"><i class="fa-solid fa-money-bill-wave"></i>Payment: Cash, PayPal</div>
+                </div>
+                <div class="lang-content" data-lang="de">
+                    <div class="footer-col-item">🌈 LGBTQ+ freundlich</div>
+                    <div class="footer-col-item"><i class="fa-solid fa-money-bill-wave"></i>Zahlung: Bar, PayPal</div>
+                </div>
+                <div class="lang-content" data-lang="zh">
+                    <div class="footer-col-item">🌈 LGBTQ+ 友好</div>
+                    <div class="footer-col-item"><i class="fa-solid fa-money-bill-wave"></i>支付方式：现金、PayPal</div>
+                </div>
             </div>
         </div>
         <hr class="footer-divider">
         <div class="footer-badges">
-            <div class="lang-content active" data-lang="en">
-                <span class="footer-badge">🌈 LGBTQ+ Friendly</span>
-                <span class="footer-badge"><i class="fa-solid fa-money-bill-wave"></i> Payment: Cash, PayPal</span>
-            </div>
-            <div class="lang-content" data-lang="de">
-                <span class="footer-badge">🌈 LGBTQ+ freundlich</span>
-                <span class="footer-badge"><i class="fa-solid fa-money-bill-wave"></i> Zahlung: Bar, PayPal</span>
-            </div>
-            <div class="lang-content" data-lang="zh">
-                <span class="footer-badge">🌈 LGBTQ+ 友好</span>
-                <span class="footer-badge"><i class="fa-solid fa-money-bill-wave"></i> 支付方式：现金、PayPal</span>
-            </div>
+            <button id="openImpressum" class="footer-inline-link">Impressum</button>
+            <button id="openDatenschutz" class="footer-inline-link">Datenschutz</button>
         </div>
         <div class="footer-copyright">
             © 2026 BoMassage München | Alle Rechte vorbehalten
