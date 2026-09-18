@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BoMassage | Sanfte Massage München-Sendling</title>
-    <meta name="description" content="Private, sanfte Massagepraxis in München-Sendling. Individuell abgestimmte Ganzkörpermassagen, Terminvereinbarung direkt per WhatsApp.">
-    <meta property="og:title" content="BoMassage | Sanfte Massage München-Sendling">
-    <meta property="og:description" content="Private, sanfte Massagepraxis in München-Sendling. Individuell abgestimmte Ganzkörpermassagen, Terminvereinbarung direkt per WhatsApp.">
+    <title>Deep Tissue & Sports Massage | BoMassage München</title>
+    <meta name="description" content="Deep Tissue & Sports Massage in München-Sendling: myofascial release and oil-assisted relaxation for exercise-related fatigue and soreness.">
+    <meta property="og:title" content="Deep Tissue & Sports Massage | BoMassage München">
+    <meta property="og:description" content="Deep Tissue & Sports Massage in München-Sendling: myofascial release and oil-assisted relaxation for exercise-related fatigue and soreness.">
     <meta property="og:image" content="assets/favicon-icon.png">
     <meta property="og:type" content="business.business">
     <meta name="twitter:card" content="summary">
@@ -1204,6 +1204,194 @@
             }
         }
     </style>
+    <style>
+        /* ===== 服务详情页专属样式 ===== */
+        .detail-wrap {
+            max-width: 1220px;
+            margin: 0 auto;
+            padding: 3rem 5% 0;
+        }
+        .detail-back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-tertiary);
+            text-decoration: none;
+            font-size: var(--fs-sm);
+            margin-bottom: 1.5rem;
+            transition: color 0.2s ease;
+        }
+        .detail-back-link:hover {
+            color: var(--pale-teal);
+        }
+        .detail-title {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: clamp(1.8rem, 4vw, 2.7rem);
+            font-weight: 500;
+            color: var(--text-primary);
+            margin-bottom: 1.1rem;
+        }
+        .detail-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-bottom: 1.6rem;
+        }
+        .detail-tag {
+            background: rgba(186, 205, 200, 0.12);
+            border: 1px solid rgba(255,255,255,0.15);
+            color: var(--pale-teal);
+            font-size: var(--fs-sm);
+            padding: 0.4rem 0.95rem;
+            border-radius: 999px;
+        }
+        .detail-intro {
+            color: var(--text-secondary);
+            font-size: var(--fs-md);
+            line-height: 1.75;
+            max-width: 720px;
+            margin-bottom: 2.2rem;
+        }
+        .detail-actions {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+        }
+        .detail-btn-primary, .detail-btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.9rem 1.8rem;
+            border-radius: 999px;
+            font-size: var(--fs-sm);
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.25s ease;
+            cursor: pointer;
+            border: none;
+            font-family: inherit;
+        }
+        .detail-btn-primary {
+            background: var(--pale-teal);
+            color: var(--dark-teal-solid);
+        }
+        .detail-btn-primary:hover {
+            background: #ffffff;
+        }
+        .detail-btn-secondary {
+            background: transparent;
+            border: 1px solid rgba(255,255,255,0.3);
+            color: var(--text-primary);
+        }
+        .detail-btn-secondary:hover {
+            border-color: var(--pale-teal);
+            color: var(--pale-teal);
+        }
+        .detail-main-grid {
+            display: grid;
+            grid-template-columns: 1.6fr 1fr;
+            gap: 2.5rem;
+            margin-bottom: 3.5rem;
+            align-items: start;
+        }
+        .detail-hero-img {
+            width: 100%;
+            border-radius: 22px;
+            overflow: hidden;
+            box-shadow: 0 10px 34px rgba(0,0,0,0.32);
+        }
+        .detail-hero-img img {
+            width: 100%;
+            height: 100%;
+            min-height: 380px;
+            object-fit: cover;
+            display: block;
+        }
+        .detail-price-panel {
+            background: rgba(186, 205, 200, 0.08);
+            border: 1px solid rgba(255,255,255,0.14);
+            border-radius: 20px;
+            padding: 1.8rem;
+        }
+        .detail-price-title {
+            font-size: 0.72rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--pale-teal);
+            margin-bottom: 1.1rem;
+        }
+        .detail-price-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .detail-price-row:last-of-type {
+            border-bottom: none;
+        }
+        .detail-price-duration {
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+        .detail-price-amount {
+            color: var(--pale-teal);
+            font-weight: 700;
+            font-size: 1.05rem;
+        }
+        .detail-duration-note {
+            margin-top: 1.2rem;
+            padding-top: 1.2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: var(--fs-sm);
+            color: var(--text-tertiary);
+            line-height: 1.65;
+        }
+        .detail-duration-note p {
+            margin-bottom: 0.6rem;
+        }
+        .detail-duration-note p:last-child {
+            margin-bottom: 0;
+        }
+        .detail-info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.6rem;
+            margin-bottom: 4rem;
+        }
+        .detail-info-card {
+            background: rgba(186, 205, 200, 0.08);
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 18px;
+            padding: 1.7rem;
+        }
+        .detail-info-icon {
+            color: var(--accent-icon);
+            font-size: 1.4rem;
+            margin-bottom: 0.9rem;
+        }
+        .detail-info-title {
+            font-size: var(--fs-md);
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.7rem;
+        }
+        .detail-info-desc {
+            font-size: var(--fs-sm);
+            color: var(--text-tertiary);
+            line-height: 1.7;
+            white-space: pre-line;
+        }
+        @media screen and (max-width: 860px) {
+            .detail-main-grid {
+                grid-template-columns: 1fr;
+            }
+            .detail-hero-img img {
+                min-height: 260px;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- 侧边导航遮罩+菜单 -->
@@ -1276,472 +1464,159 @@
             <button class="hamburger-btn" id="hamburgerBtn" aria-label="Open menu"><i class="fas fa-bars"></i></button>
         </div>
     </header>
-    <section class="hero-banner" id="home">
-        <div class="hero-slide active" style="background-image:url('assets/hero-1.jpg')"></div>
-        <div class="hero-slide" style="background-image:url('assets/hero-2.jpg')"></div>
-        <div class="hero-slide" style="background-image:url('assets/hero-3.jpg')"></div>
-        <div class="hero-dots" id="heroDots"></div>
-        <div class="hero-text-wrap">
-            <div class="lang-content active" data-lang="en">
-                <h2 class="hero-main-heading">About me</h2>
-                <div class="hero-desc-text">
-                    I'm Bobin, originally from China. In 2023 I left my job to travel the world, and it was in Thailand that I discovered my love for massage therapy, completing systematic professional training at the Wat Pho Massage School in Bangkok. Through continuous hands-on practice, I became a certified massage therapist in 2024, and to date I've performed more than 500 massages.<br><br>
-                    I have a genuine passion for giving massage — for me it's not just a job, but a healthy way of life.<br><br>
-                    Drawing on a deep understanding of massage technique and body structure, I tailor each treatment to the individual, helping you release accumulated stress, relieve physical fatigue, and calm inner anxiety.
+    <section class="detail-wrap">
+        <a href="index.html#services" class="detail-back-link nav-link" data-target="#services"><i class="fa-solid fa-arrow-left"></i> <span class="lang-content active" data-lang="en">Back</span><span class="lang-content" data-lang="de">Zurück</span><span class="lang-content" data-lang="zh">返回</span></a>
+
+        <div class="lang-content active" data-lang="en">
+            <h1 class="detail-title">Deep Tissue & Sports Massage</h1>
+            <div class="detail-tags">
+                <span class="detail-tag">Muscle soreness & fatigue from training</span>
+                <span class="detail-tag">Regular workout recovery</span>
+                <span class="detail-tag">Core muscle activation</span>
+            </div>
+            <p class="detail-intro">Deep myofascial massage combined with oil-assisted relaxation, relieving fatigue and soreness built up from long-term exercise.</p>
+        </div>
+        <div class="lang-content" data-lang="de">
+            <h1 class="detail-title">Tiefengewebe- & Sportmassage</h1>
+            <div class="detail-tags">
+                <span class="detail-tag">Muskelkater & Erschöpfung durch Training</span>
+                <span class="detail-tag">Regelmäßige Regeneration</span>
+                <span class="detail-tag">Aktivierung der Rumpfmuskulatur</span>
+            </div>
+            <p class="detail-intro">Tiefe myofasziale Massage kombiniert mit ölunterstützter Entspannung, die Erschöpfung und Muskelkater durch regelmäßiges Training lindert.</p>
+        </div>
+        <div class="lang-content" data-lang="zh">
+            <h1 class="detail-title">深层组织和运动按摩</h1>
+            <div class="detail-tags">
+                <span class="detail-tag">长期锻炼带来的肌肉酸痛和疲劳</span>
+                <span class="detail-tag">追求定期的运动恢复和肌肉保养</span>
+                <span class="detail-tag">核心肌群激活</span>
+            </div>
+            <p class="detail-intro">深层的肌筋膜按摩和精油辅助放松，让因为长期运动积累的身体疲劳和酸痛得到缓解。</p>
+        </div>
+
+        <div class="detail-actions">
+            <a href="https://wa.me/4915203246639" target="_blank" rel="noopener noreferrer" class="detail-btn-primary">
+                <i class="fa-brands fa-whatsapp"></i>
+                <span class="lang-content active" data-lang="en">Inquire / Book</span>
+                <span class="lang-content" data-lang="de">Anfragen / Buchen</span>
+                <span class="lang-content" data-lang="zh">咨询/预定</span>
+            </a>
+            <a href="index.html#services" class="detail-btn-secondary nav-link" data-target="#services">
+                <i class="fa-solid fa-arrow-left"></i>
+                <span class="lang-content active" data-lang="en">Back</span>
+                <span class="lang-content" data-lang="de">Zurück</span>
+                <span class="lang-content" data-lang="zh">返回</span>
+            </a>
+        </div>
+
+        <div class="detail-main-grid">
+            <div class="detail-hero-img">
+                <img src="assets/service-deep-tissue.jpg" alt="Deep Tissue & Sports Massage">
+            </div>
+            <div class="detail-price-panel">
+                <div class="lang-content active" data-lang="en">
+                    <div class="detail-price-title">Pricing</div>
+                    <div class="detail-price-row"><span class="detail-price-duration">60 minutes</span><span class="detail-price-amount">65 €</span></div>
+                    <div class="detail-price-row"><span class="detail-price-duration">90 minutes 👍</span><span class="detail-price-amount">90 €</span></div>
+                    <div class="detail-price-row"><span class="detail-price-duration">120 minutes 👍</span><span class="detail-price-amount">120 €</span></div>
+                    <div class="detail-duration-note">
+                        <p><b>60 min</b> — Focuses on 1–2 key tense areas, with light relaxation elsewhere, restoring overall comfort.</p>
+                        <p><b>90 min</b> — Focuses on 2–4 key tense areas, covering surrounding muscle groups for fuller relaxation.</p>
+                        <p><b>120 min</b> — Conditions the body's main muscle groups for deep release and full-body relaxation.</p>
+                    </div>
+                </div>
+                <div class="lang-content" data-lang="de">
+                    <div class="detail-price-title">Preise</div>
+                    <div class="detail-price-row"><span class="detail-price-duration">60 Minuten</span><span class="detail-price-amount">65 €</span></div>
+                    <div class="detail-price-row"><span class="detail-price-duration">90 Minuten 👍</span><span class="detail-price-amount">90 €</span></div>
+                    <div class="detail-price-row"><span class="detail-price-duration">120 Minuten 👍</span><span class="detail-price-amount">120 €</span></div>
+                    <div class="detail-duration-note">
+                        <p><b>60 Min</b> — Konzentriert sich auf 1–2 zentrale Verspannungsbereiche, restliche Bereiche werden leicht entspannt.</p>
+                        <p><b>90 Min</b> — Konzentriert sich auf 2–4 zentrale Verspannungsbereiche inklusive umliegender Muskelgruppen für eine umfassendere Entspannung.</p>
+                        <p><b>120 Min</b> — Behandelt die wichtigsten Muskelgruppen des gesamten Körpers für eine tiefe Lösung und Ganzkörperentspannung.</p>
+                    </div>
+                </div>
+                <div class="lang-content" data-lang="zh">
+                    <div class="detail-price-title">定价</div>
+                    <div class="detail-price-row"><span class="detail-price-duration">60分钟</span><span class="detail-price-amount">65€</span></div>
+                    <div class="detail-price-row"><span class="detail-price-duration">90分钟 👍</span><span class="detail-price-amount">90€</span></div>
+                    <div class="detail-price-row"><span class="detail-price-duration">120分钟 👍</span><span class="detail-price-amount">120€</span></div>
+                    <div class="detail-duration-note">
+                        <p><b>60分钟</b> — 选择1-2个重点紧绷部位疏解，其余部位简单放松，让身体恢复舒适状态。</p>
+                        <p><b>90分钟</b> — 选择2-4个重点紧绷部位疏解，覆盖周边关联肌群，让身体放松更充分。</p>
+                        <p><b>120分钟</b> — 调理全身主要肌群，实现身体深层释放，整体舒缓整合。</p>
+                    </div>
                 </div>
             </div>
-            <div class="lang-content" data-lang="de">
-                <h2 class="hero-main-heading">Über mich</h2>
-                <div class="hero-desc-text">
-                    Ich bin Bobin, ursprünglich aus China. 2023 habe ich meinen Job gekündigt, um die Welt zu bereisen, und in Thailand meine Leidenschaft für Massage entdeckt. Ich habe eine systematische, professionelle Ausbildung an der Wat Pho Massage Schule in Bangkok absolviert. Durch stetige praktische Erfahrung bin ich seit 2024 zertifizierter Masseur und habe bis heute mehr als 500 Massagen durchgeführt.<br><br>
-                    Ich liebe es von Herzen, Massagen zu geben — für mich ist es nicht nur ein Beruf, sondern ein gesunder Lebensstil.<br><br>
-                    Auf Basis eines tiefen Verständnisses für Massagetechnik und Körperstruktur gestalte ich jede Behandlung individuell auf Sie zugeschnitten und helfe Ihnen, angesammelten Stress abzubauen, körperliche Erschöpfung zu lindern und innere Unruhe zu besänftigen.
+        </div>
+
+        <div class="detail-info-grid">
+            <div class="detail-info-card">
+                <div class="detail-info-icon"><i class="fa-solid fa-hands"></i></div>
+                <div class="lang-content active" data-lang="en">
+                    <div class="detail-info-title">Technique</div>
+                    <div class="detail-info-desc">Combines deep tissue massage, myofascial release, trigger point therapy and Thai massage techniques, using rhythmic pressure and guided stretching to release tension, with oils to aid relaxation.</div>
+                </div>
+                <div class="lang-content" data-lang="de">
+                    <div class="detail-info-title">Technik</div>
+                    <div class="detail-info-desc">Kombiniert Tiefengewebsmassage, myofasziale Lösung, Triggerpunkttherapie und Thai-Massage-Techniken, mit rhythmischem Druck und geführten Dehnungen zur Lösung von Verspannungen, unterstützt durch Öle.</div>
+                </div>
+                <div class="lang-content" data-lang="zh">
+                    <div class="detail-info-title">按摩手法</div>
+                    <div class="detail-info-desc">结合深层组织按摩方法、肌筋膜放松、触发点疗法以及泰式按摩，以有节奏的按压以及引导式拉伸来缓解紧绷部位，并使用精油辅助舒缓。</div>
                 </div>
             </div>
-            <div class="lang-content" data-lang="zh">
-                <h2 class="hero-main-heading">关于我</h2>
-                <div class="hero-desc-text">
-                    我是Bobin，祖籍中国。2023年辞去本职工作开启环球旅行，在泰国邂逅按摩疗愈，并于曼谷卧佛寺按摩学院完成系统专业培训。经过长期实操打磨，2024年正式成为持证按摩理疗师，截止目前至少进行多于500次的按摩。<br><br>
-                    我由衷热爱给予按摩，对我来说它不仅仅是一份工作，也是我的一种健康的生活方式！<br><br>
-                    我会基于对按摩和身体结构的深刻理解，通过为每个人量身定制的疗法，帮助您消解积攒的压力、舒缓身体疲惫、平复内心焦虑。
+            <div class="detail-info-card">
+                <div class="detail-info-icon"><i class="fa-solid fa-person"></i></div>
+                <div class="lang-content active" data-lang="en">
+                    <div class="detail-info-title">Areas Covered</div>
+                    <div class="detail-info-desc">Back: neck, shoulders, back, glutes, arms, hands, thighs, calves, soles of feet.
+Front: chest (male only), abdomen (male only), thighs, calves, top of feet.</div>
+                </div>
+                <div class="lang-content" data-lang="de">
+                    <div class="detail-info-title">Behandelte Bereiche</div>
+                    <div class="detail-info-desc">Rückseite: Nacken, Schultern, Rücken, Gesäß, Arme, Hände, Oberschenkel, Waden, Fußsohlen.
+Vorderseite: Brust (nur Männer), Bauch (nur Männer), Oberschenkel, Waden, Fußrücken.</div>
+                </div>
+                <div class="lang-content" data-lang="zh">
+                    <div class="detail-info-title">按摩部位</div>
+                    <div class="detail-info-desc">背面：颈部、肩部、背部、臀部、手臂、手掌、大腿、小腿、脚底
+正面：胸部（仅男性）、腹部（仅男性）、大腿、小腿、脚背</div>
+                </div>
+            </div>
+            <div class="detail-info-card">
+                <div class="detail-info-icon"><i class="fa-solid fa-droplet"></i></div>
+                <div class="lang-content active" data-lang="en">
+                    <div class="detail-info-title">Oil</div>
+                    <div class="detail-info-desc">Oil optional, activating oil recommended.</div>
+                </div>
+                <div class="lang-content" data-lang="de">
+                    <div class="detail-info-title">Öl</div>
+                    <div class="detail-info-desc">Öl optional, belebendes Öl empfohlen.</div>
+                </div>
+                <div class="lang-content" data-lang="zh">
+                    <div class="detail-info-title">精油</div>
+                    <div class="detail-info-desc">可选精油或无精油，建议活络精油。</div>
+                </div>
+            </div>
+            <div class="detail-info-card">
+                <div class="detail-info-icon"><i class="fa-solid fa-gauge-high"></i></div>
+                <div class="lang-content active" data-lang="en">
+                    <div class="detail-info-title">Pressure</div>
+                    <div class="detail-info-desc">Medium to firm.</div>
+                </div>
+                <div class="lang-content" data-lang="de">
+                    <div class="detail-info-title">Druckstärke</div>
+                    <div class="detail-info-desc">Mittel bis kräftig.</div>
+                </div>
+                <div class="lang-content" data-lang="zh">
+                    <div class="detail-info-title">力度</div>
+                    <div class="detail-info-desc">力度中度以上。</div>
                 </div>
             </div>
         </div>
     </section>
-    <main class="container" style="background: linear-gradient(to bottom, var(--teal-mid) 0%, rgba(104,152,157,0) 220px); background-repeat: no-repeat;">
-        <section id="services" class="section-spacing scroll-animate delay-1">
-            <div class="lang-content active" data-lang="en">
-                <h2 class="main-title">Treatments & Prices</h2>
-                <p class="price-intro">Same rates for all massage types:</p>
-                <details class="duration-guide">
-                    <summary class="price-summary"><span class="price-num"><b>60 Min – 65 € | 90 Min – 90 € | 120 Min – 120 €</b></span><i class="fa-solid fa-chevron-down"></i></summary>
-                    <div class="duration-guide-content">
-                        <p>All treatments can be done as a targeted or full-body massage. Recommended durations are as follows:</p>
-                        <p><b>60 minutes</b> — Targets areas of tension, easing everyday muscle stiffness and restoring physical comfort.</p>
-                        <p><b>90 minutes</b> — Covers the affected area and surrounding muscle groups for a more thorough, complete relaxation.</p>
-                        <p><b>120 minutes</b> — Conditions the body's major muscle groups, delivering deep release and full-body relaxation.</p>
-                    </div>
-                </details>
-            </div>
-            <div class="lang-content" data-lang="de">
-                <h2 class="main-title">Behandlungen & Preise</h2>
-                <p class="price-intro">Einheitspreis für alle Massagen:</p>
-                <details class="duration-guide">
-                    <summary class="price-summary"><span class="price-num"><b>60 Min – 65 € | 90 Min – 90 € | 120 Min – 120 €</b></span><i class="fa-solid fa-chevron-down"></i></summary>
-                    <div class="duration-guide-content">
-                        <p>Jede Behandlung kann gezielt oder als Ganzkörpermassage durchgeführt werden. Empfohlene Dauer:</p>
-                        <p><b>60 Minuten</b> — Zielt auf verspannte Bereiche ab, lindert alltägliche Muskelsteifheit und stellt körperliches Wohlbefinden wieder her.</p>
-                        <p><b>90 Minuten</b> — Behandelt den betroffenen Bereich und die umliegenden Muskelgruppen für eine gründlichere, vollständigere Entspannung.</p>
-                        <p><b>120 Minuten</b> — Behandelt die wichtigsten Muskelgruppen des gesamten Körpers und sorgt für tiefe Lösung und ganzheitliche Entspannung.</p>
-                    </div>
-                </details>
-            </div>
-            <div class="lang-content" data-lang="zh">
-                <h2 class="main-title">服务项目 & 收费标准</h2>
-                <p class="price-intro">全部项目统一价格：</p>
-                <details class="duration-guide">
-                    <summary class="price-summary"><span class="price-num"><b>60分钟 – 65€ ｜ 90分钟 – 90€ ｜ 120分钟 – 120€</b></span><i class="fa-solid fa-chevron-down"></i></summary>
-                    <div class="duration-guide-content">
-                        <p>所有项目可选择局部或全身按摩，根据时长建议如下：</p>
-                        <p><b>60分钟</b> — 针对紧绷部位，舒缓日常积攒的肌肉僵硬，恢复身体舒适状态。</p>
-                        <p><b>90分钟</b> — 覆盖局部及周边关联肌群，放松更充分，体验更完整。</p>
-                        <p><b>120分钟</b> — 调理全身主要肌群，实现身体深层释放，整体舒缓整合。</p>
-                    </div>
-                </details>
-            </div>
-            <div class="services-grid">
-                <a href="service-deep-tissue.html" class="service-card service-card-link scroll-animate delay-1">
-                    <div class="card-img-box has-photo">
-                        <div class="card-icon-badge"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="24" cy="24" r="19"/>
-                            <path d="M16 30 L22 17 L26 26 L32 15"/>
-                        </svg></div>
-                        <img class="card-photo" src="assets/service-deep-tissue.jpg" alt="Deep Tissue & Sports Massage" style="object-position: center 40%;">
-                    </div>
-                    <div class="lang-content active" data-lang="en">
-                        <h3 class="service-name"><i class="fa-solid fa-thumbs-up"></i> Deep Tissue & Sports Massage</h3>
-                        <p class="service-desc">A full-body relaxation massage using oils and firm techniques, with targeted pressure on specific fatigued areas to relieve muscle stiffness and tension.</p>
-                        <div class="service-suitable-title">Who it's for</div>
-                        <ul class="service-suitable-list">
-                        <li>Guests who prefer medium-to-firm pressure</li>
-                        <li>Persistent tension in the back, shoulders or legs</li>
-                        <li>Fatigue from regular exercise or prolonged sitting</li>
-                        </ul>
-                    </div>
-                    <div class="lang-content" data-lang="de">
-                        <h3 class="service-name"><i class="fa-solid fa-thumbs-up"></i> Tiefengewebe- & Sportmassage</h3>
-                        <p class="service-desc">Eine Ganzkörper-Entspannungsmassage mit Ölen und kräftigen Techniken, mit gezieltem Druck auf bestimmte ermüdete Bereiche zur Linderung von Muskelsteifheit und Verspannung.</p>
-                        <div class="service-suitable-title">Wer profitiert</div>
-                        <ul class="service-suitable-list">
-                        <li>Wer mittleren bis kräftigen Druck bevorzugt</li>
-                        <li>Anhaltende Verspannungen in Rücken, Schultern oder Beinen</li>
-                        <li>Erschöpfung durch regelmäßigen Sport oder langes Sitzen</li>
-                        </ul>
-                    </div>
-                    <div class="lang-content" data-lang="zh">
-                        <h3 class="service-name"><i class="fa-solid fa-thumbs-up"></i> 深层和运动按摩</h3>
-                        <p class="service-desc">精油配合有力手法进行整体放松，并对部分疲劳身体部位针对性按压，缓解肌肉僵硬和疲劳。</p>
-                        <div class="service-suitable-title">适合</div>
-                        <ul class="service-suitable-list">
-                            <li>喜欢力度中度以上</li>
-                            <li>持续的背部、肩部或腿部等紧张</li>
-                            <li>长期锻炼或长期久坐</li>
-                        </ul>
-                    </div>
-                </a>
-                <div class="service-card scroll-animate delay-2">
-                    <div class="card-img-box has-photo">
-                        <div class="card-icon-badge"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="24" cy="24" r="19"/>
-                            <path d="M13 19 Q18.5 13 24 19 T35 19"/>
-                            <path d="M13 24 Q18.5 18 24 24 T35 24"/>
-                            <path d="M13 29 Q18.5 23 24 29 T35 29"/>
-                        </svg></div>
-                        <img class="card-photo" src="assets/service-aroma.jpg" alt="Aromatherapy Relaxation Massage" style="object-position: center 55%;">
-                    </div>
-                    <div class="lang-content active" data-lang="en">
-                        <h3 class="service-name">Aromatherapy Relaxation Massage</h3>
-                        <p class="service-desc">With the aroma of essential oils and soothing massage techniques, this treatment promotes blood circulation, balances body and mind, and relieves tension.</p>
-                        <div class="service-suitable-title">Who it's for</div>
-                        <ul class="service-suitable-list">
-                        <li>Guests seeking a tranquil experience</li>
-                        <li>Those who enjoy flowing, relaxing massage</li>
-                        <li>Dry or tired skin</li>
-                        </ul>
-                    </div>
-                    <div class="lang-content" data-lang="de">
-                        <h3 class="service-name">Aromatherapie Entspannungsmassage</h3>
-                        <p class="service-desc">Mit dem Duft ätherischer Öle und sanften Massagetechniken fördert diese Behandlung die Durchblutung, bringt Körper und Geist ins Gleichgewicht und löst Anspannung.</p>
-                        <div class="service-suitable-title">Wer profitiert</div>
-                        <ul class="service-suitable-list">
-                        <li>Wer eine ruhige, entspannende Erfahrung sucht</li>
-                        <li>Wer fließende, entspannende Massagen mag</li>
-                        <li>Trockene oder müde Haut</li>
-                        </ul>
-                    </div>
-                    <div class="lang-content" data-lang="zh">
-                        <h3 class="service-name">芳香SPA放松按摩</h3>
-                        <p class="service-desc">借助精油的芳香，舒缓的按摩手法，促进血液循环，平衡身心和缓解紧张。</p>
-                        <div class="service-suitable-title">适合</div>
-                        <ul class="service-suitable-list">
-                        <li>享受宁静体验</li>
-                        <li>喜欢流畅、放松按摩</li>
-                        <li>干燥或疲倦的皮肤</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="service-card scroll-animate delay-3">
-                    <div class="card-img-box has-photo">
-                        <div class="card-icon-badge"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="24" cy="24" r="19"/>
-                            <path d="M24 14 C31 14 34 19 32 24 C30 29 23 29 22 24 C21 20 25 18 28 21"/>
-                        </svg></div>
-                        <img class="card-photo" src="assets/service-healing-touch.jpg" alt="Healing Touch Massage" style="object-position: center 20%;">
-                    </div>
-                    <div class="lang-content active" data-lang="en">
-                        <h3 class="service-name">Healing Touch Massage</h3>
-                        <p class="service-desc">With the aid of singing bowls and healing music, gentle massage strokes and touches allow the body to slowly settle into deep relaxation, reaching a joyful state of "mind-body balance."</p>
-                        <div class="service-suitable-title">Who it's for</div>
-                        <ul class="service-suitable-list">
-                        <li>Those under long-term stress</li>
-                        <li>Guests feeling emotionally tense</li>
-                        <li>Those experiencing low mood</li>
-                        </ul>
-                    </div>
-                    <div class="lang-content" data-lang="de">
-                        <h3 class="service-name">Heilsame Berührungsmassage</h3>
-                        <p class="service-desc">Mit Klangschalen und heilsamer Musik sowie sehr sanften Massagegriffen und Berührungen kommt der Körper langsam zur Ruhe und erreicht eine tiefe Entspannung im Sinne der „Balance von Körper und Geist".</p>
-                        <div class="service-suitable-title">Wer profitiert</div>
-                        <ul class="service-suitable-list">
-                        <li>Bei anhaltendem Stress</li>
-                        <li>Bei emotionaler Anspannung</li>
-                        <li>Bei gedrückter Stimmung</li>
-                        </ul>
-                    </div>
-                    <div class="lang-content" data-lang="zh">
-                        <h3 class="service-name">疗愈按摩</h3>
-                        <p class="service-desc">借助钵和疗愈音乐，用柔和的按摩手法或抚摸，让身体缓缓沉静，深度放松，达到"身心平衡"的愉悦。</p>
-                        <div class="service-suitable-title">适合</div>
-                        <ul class="service-suitable-list">
-                        <li>长期压力大</li>
-                        <li>情绪紧绷</li>
-                        <li>情绪低落</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="service-card scroll-animate delay-4">
-                    <div class="card-img-box has-photo">
-                        <div class="card-icon-badge"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="24" cy="24" r="19"/>
-                            <circle cx="24" cy="24" r="12"/>
-                            <circle cx="24" cy="24" r="5"/>
-                        </svg></div>
-                        <img class="card-photo" src="assets/service-thai.jpg" alt="Thai & Traditional Asian Massage" style="object-position: center 35%;">
-                    </div>
-                    <div class="lang-content active" data-lang="en">
-                        <h3 class="service-name">Thai & Traditional Asian Massage (Oil-Free)</h3>
-                        <p class="service-desc">Traditional Thai massage combined with Chinese tuina, using rhythmic pressure and guided stretching to release tension, working along the body's energy lines.</p>
-                        <div class="service-suitable-title">Who it's for</div>
-                        <ul class="service-suitable-list">
-                        <li>Overall muscle tension and stiffness</li>
-                        <li>Localized body pain</li>
-                        <li>Guests who prefer massage without oil</li>
-                        </ul>
-                    </div>
-                    <div class="lang-content" data-lang="de">
-                        <h3 class="service-name">Thai- & Traditionelle Asiatische Massage (Ohne Öl)</h3>
-                        <p class="service-desc">Traditionelle Thai-Massage kombiniert mit chinesischer Tuina, mit rhythmischem Druck und geführten Dehnungen zur Lösung von Verspannungen entlang der Energielinien des Körpers.</p>
-                        <div class="service-suitable-title">Wer profitiert</div>
-                        <ul class="service-suitable-list">
-                        <li>Allgemeine Muskelverspannung und Steifheit</li>
-                        <li>Lokale Körperschmerzen</li>
-                        <li>Gäste, die eine Massage ohne Öl bevorzugen</li>
-                        </ul>
-                    </div>
-                    <div class="lang-content" data-lang="zh">
-                        <h3 class="service-name">泰式中式融合按摩（无油）</h3>
-                        <p class="service-desc">传统泰式融合中式推拿，以有节奏的按压以及引导式拉伸来舒缓紧绷的部位，作用于身体的能量线。</p>
-                        <div class="service-suitable-title">适合</div>
-                        <ul class="service-suitable-list">
-                        <li>全身肌肉紧张和僵硬</li>
-                        <li>身体部位疼痛</li>
-                        <li>喜欢无油按摩</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="service-card scroll-animate delay-1">
-                    <div class="card-img-box has-photo">
-                        <div class="card-icon-badge"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="24" cy="24" r="19"/>
-                            <path d="M24 24 L24 9 M24 24 L35.8 12.2 M24 24 L39 24 M24 24 L35.8 35.8 M24 24 L24 39 M24 24 L12.2 35.8 M24 24 L9 24 M24 24 L12.2 12.2"/>
-                        </svg></div>
-                        <img class="card-photo" src="assets/service-custom.jpg" alt="Custom Massage Tailored For You">
-                    </div>
-                    <div class="lang-content active" data-lang="en">
-                        <h3 class="service-name">Custom Massage Tailored For You</h3>
-                        <p class="service-desc">If none of the treatments above fully fit your needs, contact me anytime. I will design the perfect massage according to your requirements.</p>
-                        <div class="service-suitable-title">Who it's for</div>
-                        <ul class="service-suitable-list">
-                        <li>Special massage requests</li>
-                        <li>A combination of the above massage types</li>
-                        <li>Custom session durations</li>
-                        </ul>
-                    </div>
-                    <div class="lang-content" data-lang="de">
-                        <h3 class="service-name">Individuell angepasste Massage</h3>
-                        <p class="service-desc">Passt keine der Behandlungen zu Ihnen? Schreiben Sie mir gerne, ich gestalte eine auf Sie abgestimmte Massage.</p>
-                        <div class="service-suitable-title">Wer profitiert</div>
-                        <ul class="service-suitable-list">
-                        <li>Besondere Massagewünsche</li>
-                        <li>Eine Kombination der oben genannten Massagearten</li>
-                        <li>Individuelle Behandlungsdauer</li>
-                        </ul>
-                    </div>
-                    <div class="lang-content" data-lang="zh">
-                        <h3 class="service-name">专属定制按摩方案</h3>
-                        <p class="service-desc">如若以上项目不完全符合您的需要，可随时联系我，我将基于您的需求设计最适合您的按摩类型</p>
-                        <div class="service-suitable-title">适合人群</div>
-                        <ul class="service-suitable-list">
-                        <li>特殊按摩需求</li>
-                        <li>以上按摩类型混合</li>
-                        <li>特殊按摩时长</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section id="reviews" class="section-spacing scroll-animate delay-2">
-            <div class="lang-content active" data-lang="en">
-                <h2 class="main-title">What my guests say</h2>
-                <p style="font-size:var(--fs-sm);color:var(--pale-teal);margin-bottom:2rem;">Genuine customer reviews — names and avatars anonymized for privacy.</p>
-            </div>
-            <div class="lang-content" data-lang="de">
-                <h2 class="main-title">Was meine Gäste sagen</h2>
-                <p style="font-size:var(--fs-sm);color:var(--pale-teal);margin-bottom:2rem;">Echte Kundenbewertungen – Namen und Avatare zum Datenschutz anonymisiert.</p>
-            </div>
-            <div class="lang-content" data-lang="zh">
-                <h2 class="main-title">客人真实体验评价</h2>
-                <p style="font-size:var(--fs-sm);color:var(--pale-teal);margin-bottom:2rem;">顾客的真实留言，人名和头像已做隐私处理。</p>
-            </div>
-            <div class="review-grid" id="reviewGrid">
-                <div class="review-card">
-                    <div class="lang-content active" data-lang="en"><div class="review-top"><div class="review-avatar" style="background-image:url('assets/avatar-1.jpg')"></div><div class="review-top-text"><p class="review-author">Tors.</p><p class="review-date">via WhatsApp</p></div></div><p class="review-content">"Hey Bobin, just wanted to let you know. Your massage worked great. Was almost pain-free today. My therapist said that all the muscles, which are usually tense, were nice and loose. He only treated two small muscles and corrected the pelvic obliquity a bit. So what you did yesterday worked great. Thanks a lot. See you next time."</p><button class="review-chat-link" data-review="1" title="View WhatsApp chat" aria-label="View WhatsApp chat">Read full review <i class="fa-solid fa-arrow-right"></i></button></div>
-                    <div class="lang-content" data-lang="de"><div class="review-top"><div class="review-avatar" style="background-image:url('assets/avatar-1.jpg')"></div><div class="review-top-text"><p class="review-author">Tors.</p><p class="review-date">via WhatsApp</p></div></div><p class="review-content">"Hey Bobin, just wanted to let you know. Your massage worked great. Was almost pain-free today. My therapist said that all the muscles, which are usually tense, were nice and loose. He only treated two small muscles and corrected the pelvic obliquity a bit. So what you did yesterday worked great. Thanks a lot. See you next time."</p><button class="review-chat-link" data-review="1" title="WhatsApp-Chat ansehen" aria-label="WhatsApp-Chat ansehen">Vollständige Bewertung lesen <i class="fa-solid fa-arrow-right"></i></button></div>
-                    <div class="lang-content" data-lang="zh"><div class="review-top"><div class="review-avatar" style="background-image:url('assets/avatar-1.jpg')"></div><div class="review-top-text"><p class="review-author">Tors.</p><p class="review-date">via WhatsApp</p></div></div><p class="review-content">"Hey Bobin, just wanted to let you know. Your massage worked great. Was almost pain-free today. My therapist said that all the muscles, which are usually tense, were nice and loose. He only treated two small muscles and corrected the pelvic obliquity a bit. So what you did yesterday worked great. Thanks a lot. See you next time."</p><button class="review-chat-link" data-review="1" title="查看聊天记录" aria-label="查看聊天记录">查看完整评价 <i class="fa-solid fa-arrow-right"></i></button></div>
-                </div>
-                <div class="review-card">
-                    <div class="lang-content active" data-lang="en"><div class="review-top"><div class="review-avatar" style="background-image:url('assets/avatar-2.jpg')"></div><div class="review-top-text"><p class="review-author">Stev.</p><p class="review-date">via WhatsApp</p></div></div><p class="review-content">"Hey Bobin, Just wanted to thank you for the massage. I am feeling really good and totally relaxed 🙏 Have a great weekend and all the best for you. Hope to see you again …."</p><button class="review-chat-link" data-review="2" title="View WhatsApp chat" aria-label="View WhatsApp chat">Read full review <i class="fa-solid fa-arrow-right"></i></button></div>
-                    <div class="lang-content" data-lang="de"><div class="review-top"><div class="review-avatar" style="background-image:url('assets/avatar-2.jpg')"></div><div class="review-top-text"><p class="review-author">Stev.</p><p class="review-date">via WhatsApp</p></div></div><p class="review-content">"Hey Bobin, Just wanted to thank you for the massage. I am feeling really good and totally relaxed 🙏 Have a great weekend and all the best for you. Hope to see you again …."</p><button class="review-chat-link" data-review="2" title="WhatsApp-Chat ansehen" aria-label="WhatsApp-Chat ansehen">Vollständige Bewertung lesen <i class="fa-solid fa-arrow-right"></i></button></div>
-                    <div class="lang-content" data-lang="zh"><div class="review-top"><div class="review-avatar" style="background-image:url('assets/avatar-2.jpg')"></div><div class="review-top-text"><p class="review-author">Stev.</p><p class="review-date">via WhatsApp</p></div></div><p class="review-content">"Hey Bobin, Just wanted to thank you for the massage. I am feeling really good and totally relaxed 🙏 Have a great weekend and all the best for you. Hope to see you again …."</p><button class="review-chat-link" data-review="2" title="查看聊天记录" aria-label="查看聊天记录">查看完整评价 <i class="fa-solid fa-arrow-right"></i></button></div>
-                </div>
-                <div class="review-card">
-                    <div class="lang-content active" data-lang="en"><div class="review-top"><div class="review-avatar" style="background-image:url('assets/avatar-3.jpg')"></div><div class="review-top-text"><p class="review-author">Manf.</p><p class="review-date">via WhatsApp</p></div></div><p class="review-content">"Lieber Bob, vielen ehrlichen Dank für deine so großartige Massage und deine so angenehmen Berührungen, die mir so unglaublich gut tun und mir unglaublich viel Kraft Energie und Motivation geben. Du bedeutest mir unglaublich viel. Ganz ganz ehrlich und du bist und warst für mich in diesen so schwierigen Monate eine unglaubliche mentale Unterstützung. Lg"</p><button class="review-chat-link" data-review="3" title="View WhatsApp chat" aria-label="View WhatsApp chat">Read full review <i class="fa-solid fa-arrow-right"></i></button></div>
-                    <div class="lang-content" data-lang="de"><div class="review-top"><div class="review-avatar" style="background-image:url('assets/avatar-3.jpg')"></div><div class="review-top-text"><p class="review-author">Manf.</p><p class="review-date">via WhatsApp</p></div></div><p class="review-content">"Lieber Bob, vielen ehrlichen Dank für deine so großartige Massage und deine so angenehmen Berührungen, die mir so unglaublich gut tun und mir unglaublich viel Kraft Energie und Motivation geben. Du bedeutest mir unglaublich viel. Ganz ganz ehrlich und du bist und warst für mich in diesen so schwierigen Monate eine unglaubliche mentale Unterstützung. Lg"</p><button class="review-chat-link" data-review="3" title="WhatsApp-Chat ansehen" aria-label="WhatsApp-Chat ansehen">Vollständige Bewertung lesen <i class="fa-solid fa-arrow-right"></i></button></div>
-                    <div class="lang-content" data-lang="zh"><div class="review-top"><div class="review-avatar" style="background-image:url('assets/avatar-3.jpg')"></div><div class="review-top-text"><p class="review-author">Manf.</p><p class="review-date">via WhatsApp</p></div></div><p class="review-content">"Lieber Bob, vielen ehrlichen Dank für deine so großartige Massage und deine so angenehmen Berührungen, die mir so unglaublich gut tun und mir unglaublich viel Kraft Energie und Motivation geben. Du bedeutest mir unglaublich viel. Ganz ganz ehrlich und du bist und warst für mich in diesen so schwierigen Monate eine unglaubliche mentale Unterstützung. Lg"</p><button class="review-chat-link" data-review="3" title="查看聊天记录" aria-label="查看聊天记录">查看完整评价 <i class="fa-solid fa-arrow-right"></i></button></div>
-                </div>
-                <div class="review-card">
-                    <div class="lang-content active" data-lang="en"><div class="review-top"><div class="review-avatar" style="background-image:url('assets/avatar-4.jpg')"></div><div class="review-top-text"><p class="review-author">F.S</p><p class="review-date">via WhatsApp</p></div></div><p class="review-content">"Hey Bobin! Your massage was really effective. My muscles were more relaxed afterwards and yesterday at the gym I felt much less tension in my shoulders. So thanks again!"</p><button class="review-chat-link" data-review="4" title="View WhatsApp chat" aria-label="View WhatsApp chat">Read full review <i class="fa-solid fa-arrow-right"></i></button></div>
-                    <div class="lang-content" data-lang="de"><div class="review-top"><div class="review-avatar" style="background-image:url('assets/avatar-4.jpg')"></div><div class="review-top-text"><p class="review-author">F.S</p><p class="review-date">via WhatsApp</p></div></div><p class="review-content">"Hey Bobin! Your massage was really effective. My muscles were more relaxed afterwards and yesterday at the gym I felt much less tension in my shoulders. So thanks again!"</p><button class="review-chat-link" data-review="4" title="WhatsApp-Chat ansehen" aria-label="WhatsApp-Chat ansehen">Vollständige Bewertung lesen <i class="fa-solid fa-arrow-right"></i></button></div>
-                    <div class="lang-content" data-lang="zh"><div class="review-top"><div class="review-avatar" style="background-image:url('assets/avatar-4.jpg')"></div><div class="review-top-text"><p class="review-author">F.S</p><p class="review-date">via WhatsApp</p></div></div><p class="review-content">"Hey Bobin! Your massage was really effective. My muscles were more relaxed afterwards and yesterday at the gym I felt much less tension in my shoulders. So thanks again!"</p><button class="review-chat-link" data-review="4" title="查看聊天记录" aria-label="查看聊天记录">查看完整评价 <i class="fa-solid fa-arrow-right"></i></button></div>
-                </div>
-                <div class="review-card">
-                    <div class="lang-content active" data-lang="en"><div class="review-top"><div class="review-avatar" style="background-image:url('assets/avatar-5.jpg')"></div><div class="review-top-text"><p class="review-author">Stef.</p><p class="review-date">via WhatsApp</p></div></div><p class="review-content">"Thank you 🙏 I feel so relaxed now. After my tea, I fell asleep for like an hour"</p><button class="review-chat-link" data-review="5" title="View WhatsApp chat" aria-label="View WhatsApp chat">Read full review <i class="fa-solid fa-arrow-right"></i></button></div>
-                    <div class="lang-content" data-lang="de"><div class="review-top"><div class="review-avatar" style="background-image:url('assets/avatar-5.jpg')"></div><div class="review-top-text"><p class="review-author">Stef.</p><p class="review-date">via WhatsApp</p></div></div><p class="review-content">"Thank you 🙏 I feel so relaxed now. After my tea, I fell asleep for like an hour"</p><button class="review-chat-link" data-review="5" title="WhatsApp-Chat ansehen" aria-label="WhatsApp-Chat ansehen">Vollständige Bewertung lesen <i class="fa-solid fa-arrow-right"></i></button></div>
-                    <div class="lang-content" data-lang="zh"><div class="review-top"><div class="review-avatar" style="background-image:url('assets/avatar-5.jpg')"></div><div class="review-top-text"><p class="review-author">Stef.</p><p class="review-date">via WhatsApp</p></div></div><p class="review-content">"Thank you 🙏 I feel so relaxed now. After my tea, I fell asleep for like an hour"</p><button class="review-chat-link" data-review="5" title="查看聊天记录" aria-label="查看聊天记录">查看完整评价 <i class="fa-solid fa-arrow-right"></i></button></div>
-                </div>
-            </div>
-            <div class="review-dots" id="reviewDots"></div>
-        </section>
-        <section class="section-spacing faq-section-bottom scroll-animate delay-4" id="faq">
-            <div class="lang-content active" data-lang="en">
-                <h2 class="main-title">Frequently Asked Questions</h2>
-            </div>
-            <div class="lang-content" data-lang="de">
-                <h2 class="main-title">Häufig gestellte Fragen</h2>
-            </div>
-            <div class="lang-content" data-lang="zh">
-                <h2 class="main-title">常见问题</h2>
-            </div>
-            <div class="promise-list">
-                <div class="promise-item scroll-animate delay-1">
-                    <div class="promise-icon"><i class="fa-solid fa-house-chimney"></i></div>
-                    <div class="promise-text">
-                        <div class="lang-content active" data-lang="en">
-                            <h3 class="promise-title">Do you offer home massage visits across Munich?</h3>
-                            <p class="promise-desc">Yes, home service available at your apartment, office or hotel. Extra fee 10-20 € depending on distance.</p>
-                        </div>
-                        <div class="lang-content" data-lang="de">
-                            <h3 class="promise-title">Biete ich Hausbesuche in München an?</h3>
-                            <p class="promise-desc">Ja, Hausbesuche in Wohnung, Büro oder Hotel möglich. Zusatzkosten 10–20 € je nach Entfernung.</p>
-                        </div>
-                        <div class="lang-content" data-lang="zh">
-                            <h3 class="promise-title">慕尼黑可以提供上门按摩服务吗？</h3>
-                            <p class="promise-desc">可以，可前往住宅、办公室、酒店上门服务，根据距离加收10-20欧元上门费用。</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="promise-item scroll-animate delay-2">
-                    <div class="promise-icon"><i class="fa-solid fa-circle-info"></i></div>
-                    <div class="promise-text">
-                        <div class="lang-content active" data-lang="en">
-                            <h3 class="promise-title">Is this medical therapeutic massage?</h3>
-                            <p class="promise-desc">No, it is purely wellness relaxation massage for stress relief, not medical treatment.</p>
-                        </div>
-                        <div class="lang-content" data-lang="de">
-                            <h3 class="promise-title">Ist dies eine medizinische Therapiemassage?</h3>
-                            <p class="promise-desc">Nein, reine Entspannungsmassage zur Erholung, keine medizinische Behandlung.</p>
-                        </div>
-                        <div class="lang-content" data-lang="zh">
-                            <h3 class="promise-title">属于医疗理疗按摩吗？</h3>
-                            <p class="promise-desc">不属于医疗治疗范畴，仅为放松舒缓身心的康养按摩。</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="promise-item scroll-animate delay-3">
-                    <div class="promise-icon"><i class="fa-solid fa-calendar-check"></i></div>
-                    <div class="promise-text">
-                        <div class="lang-content active" data-lang="en">
-                            <h3 class="promise-title">How can I book an appointment?</h3>
-                            <p class="promise-desc">Booking via WhatsApp is easiest. We will confirm time, location and massage type together.</p>
-                        </div>
-                        <div class="lang-content" data-lang="de">
-                            <h3 class="promise-title">Wie kann ich einen Termin buchen?</h3>
-                            <p class="promise-desc">Am besten über WhatsApp buchen, wir vereinbaren gemeinsam alle Details.</p>
-                        </div>
-                        <div class="lang-content" data-lang="zh">
-                            <h3 class="promise-title">如何预约按摩？</h3>
-                            <p class="promise-desc">最佳方式通过WhatsApp沟通，双方敲定时间、地点以及按摩项目即可。</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="promise-item scroll-animate delay-4">
-                    <div class="promise-icon"><i class="fa-solid fa-list-check"></i></div>
-                    <div class="promise-text">
-                        <div class="lang-content active" data-lang="en">
-                            <h3 class="promise-title">What preparations do I need before the appointment?</h3>
-                            <p class="promise-desc">Please avoid eating heavy meals one hour before massage. Wear loose comfortable clothes. Shower beforehand is recommended for better experience.</p>
-                        </div>
-                        <div class="lang-content" data-lang="de">
-                            <h3 class="promise-title">Welche Vorbereitungen muss ich vor dem Termin treffen?</h3>
-                            <p class="promise-desc">Bitte eine Stunde vor der Massage keine große Mahlzeit essen. Trage lockere Kleidung, vorheriges Duschen wird empfohlen.</p>
-                        </div>
-                        <div class="lang-content" data-lang="zh">
-                            <h3 class="promise-title">预约前需要准备什么？</h3>
-                            <p class="promise-desc">按摩前1小时不要吃得过饱，穿着宽松衣物，提前沐浴会让体验更佳。</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="promise-item scroll-animate delay-5">
-                    <div class="promise-icon"><i class="fa-solid fa-euro-sign"></i></div>
-                    <div class="promise-text">
-                        <div class="lang-content active" data-lang="en">
-                            <h3 class="promise-title">Is the service only for private paying customers?</h3>
-                            <p class="promise-desc">Yes, only private payment accepted. Health insurance cannot cover this wellness massage service.</p>
-                        </div>
-                        <div class="lang-content" data-lang="de">
-                            <h3 class="promise-title">Ist der Service nur für selbstzahlende Kunden verfügbar?</h3>
-                            <p class="promise-desc">Ja, nur Selbstzahlung möglich. Die Krankenkasse übernimmt keine Kosten für diese Wellnessmassage.</p>
-                        </div>
-                        <div class="lang-content" data-lang="zh">
-                            <h3 class="promise-title">服务仅面向自费顾客吗？</h3>
-                            <p class="promise-desc">是的，仅支持自费支付，德国医保无法报销该康养按摩服务。</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="promise-item scroll-animate delay-6">
-                    <div class="promise-icon"><i class="fa-solid fa-shirt"></i></div>
-                    <div class="promise-text">
-                        <div class="lang-content active" data-lang="en">
-                            <h3 class="promise-title">Will I be naked?</h3>
-                            <p class="promise-desc">Depends. You will be wearing comfortable clothes for Thai & Traditional Asian Massage, but you will be naked or partially naked for other massages with oil.</p>
-                        </div>
-                        <div class="lang-content" data-lang="de">
-                            <h3 class="promise-title">Muss ich mich vollständig ausziehen?</h3>
-                            <p class="promise-desc">Das hängt von der Massageart ab. Bei Thai-Massage tragen Sie bequeme Kleidung, bei allen Ölmassagen sind Sie ganz oder teilweise unbekleidet.</p>
-                        </div>
-                        <div class="lang-content" data-lang="zh">
-                            <h3 class="promise-title">按摩需要全裸吗？</h3>
-                            <p class="promise-desc">视按摩项目而定：泰式推拿全程可穿着宽松衣物；其余精油类按摩需要全裸或半裸进行。</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="promise-item scroll-animate delay-7">
-                    <div class="promise-icon"><i class="fa-solid fa-shield-halved"></i></div>
-                    <div class="promise-text">
-                        <div class="lang-content active" data-lang="en">
-                            <h3 class="promise-title">Do you offer sexual services?</h3>
-                            <p class="promise-desc">No, I don't do any sexual services！！</p>
-                        </div>
-                        <div class="lang-content" data-lang="de">
-                            <h3 class="promise-title">Bieten Sie erotische oder sexuelle Dienstleistungen an?</h3>
-                            <p class="promise-desc">Nein, ich biete keinerlei sexuellen Dienstleistungen an!!</p>
-                        </div>
-                        <div class="lang-content" data-lang="zh">
-                            <h3 class="promise-title">是否提供色情相关服务？</h3>
-                            <p class="promise-desc">绝不提供任何色情、性相关服务！！</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="promise-item scroll-animate delay-8">
-                    <div class="promise-icon"><i class="fa-solid fa-gift"></i></div>
-                    <div class="promise-text">
-                        <div class="lang-content active" data-lang="en">
-                            <h3 class="promise-title">Can I gift someone a massage voucher?</h3>
-                            <p class="promise-desc">Yes! Choose your favorite <button class="voucher-trigger">voucher design <i class="fa-solid fa-images"></i></button> — I'll mail it to you or you can pick it up, free of charge. The recipient can then book their own appointment following the simple instructions on the voucher.</p>
-                        </div>
-                        <div class="lang-content" data-lang="de">
-                            <h3 class="promise-title">Kann ich einen Massage-Gutschein verschenken?</h3>
-                            <p class="promise-desc">Ja! Wählen Sie Ihr bevorzugtes <button class="voucher-trigger">Gutschein-Design <i class="fa-solid fa-images"></i></button> — ich schicke ihn Ihnen zu oder Sie holen ihn ab, ohne Aufpreis. Die beschenkte Person kann anhand der einfachen Anleitung auf dem Gutschein selbst einen Termin buchen.</p>
-                        </div>
-                        <div class="lang-content" data-lang="zh">
-                            <h3 class="promise-title">是否可以赠送别人"按摩券"</h3>
-                            <p class="promise-desc">您可以选择您喜欢的<button class="voucher-trigger">按摩券样式 <i class="fa-solid fa-images"></i></button>，我将为您寄出或自取，不额外收费。之后赠送人根据按摩券上的简单指引自行预约。</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
     <footer id="siteFooter">
         <div class="footer-columns">
             <div class="footer-col">
