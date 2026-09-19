@@ -1256,7 +1256,7 @@
             display: flex;
             gap: 1rem;
             flex-wrap: wrap;
-            margin-bottom: 3rem;
+            margin-bottom: 0;
         }
         .detail-btn-primary, .detail-btn-secondary {
             display: inline-flex;
@@ -1290,11 +1290,21 @@
             border-color: var(--pale-teal);
             color: var(--pale-teal);
         }
-        .detail-main-grid {
+        .detail-top-grid {
+            display: grid;
+            grid-template-columns: 1.3fr 1fr;
+            gap: 2.5rem;
+            margin-bottom: 3.5rem;
+            align-items: center;
+        }
+        .detail-top-left .detail-intro {
+            max-width: none;
+        }
+        .detail-bottom-grid {
             display: grid;
             grid-template-columns: 1.6fr 1fr;
             gap: 2.5rem;
-            margin-bottom: 3.5rem;
+            margin-bottom: 4rem;
             align-items: start;
         }
         .detail-hero-img {
@@ -1358,9 +1368,8 @@
         }
         .detail-info-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 1.6rem;
-            margin-bottom: 4rem;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.4rem;
         }
         .detail-info-card {
             background: rgba(186, 205, 200, 0.08);
@@ -1391,7 +1400,10 @@
             white-space: pre-line;
         }
         @media screen and (max-width: 860px) {
-            .detail-main-grid {
+            .detail-top-grid, .detail-bottom-grid {
+                grid-template-columns: 1fr;
+            }
+            .detail-info-grid {
                 grid-template-columns: 1fr;
             }
             .detail-hero-img img {
@@ -1480,52 +1492,109 @@
     <section class="detail-wrap">
         <a href="index.html#services" class="detail-back-link nav-link" data-target="#services"><i class="fa-solid fa-arrow-left"></i> <span class="lang-content active" data-lang="en">Back</span><span class="lang-content" data-lang="de">Zurück</span><span class="lang-content" data-lang="zh">返回</span></a>
 
-        <div class="lang-content active" data-lang="en">
-            <h1 class="detail-title">Deep Tissue & Sports Massage</h1>
-            <div class="detail-tags">
-                <span class="detail-tag">Muscle soreness & fatigue from training</span>
-                <span class="detail-tag">Regular workout recovery</span>
-                <span class="detail-tag">Core muscle activation</span>
-            </div>
-            <p class="detail-intro">Deep myofascial massage combined with oil-assisted relaxation, relieving fatigue and soreness built up from long-term exercise.</p>
-        </div>
-        <div class="lang-content" data-lang="de">
-            <h1 class="detail-title">Tiefengewebe- & Sportmassage</h1>
-            <div class="detail-tags">
-                <span class="detail-tag">Muskelkater & Erschöpfung durch Training</span>
-                <span class="detail-tag">Regelmäßige Regeneration</span>
-                <span class="detail-tag">Aktivierung der Rumpfmuskulatur</span>
-            </div>
-            <p class="detail-intro">Tiefe myofasziale Massage kombiniert mit ölunterstützter Entspannung, die Erschöpfung und Muskelkater durch regelmäßiges Training lindert.</p>
-        </div>
-        <div class="lang-content" data-lang="zh">
-            <h1 class="detail-title">深层组织和运动按摩</h1>
-            <div class="detail-tags">
-                <span class="detail-tag">长期锻炼带来的肌肉酸痛和疲劳</span>
-                <span class="detail-tag">追求定期的运动恢复和肌肉保养</span>
-                <span class="detail-tag">核心肌群激活</span>
-            </div>
-            <p class="detail-intro">深层的肌筋膜按摩和精油辅助放松，让因为长期运动积累的身体疲劳和酸痛得到缓解。</p>
-        </div>
+        <div class="detail-top-grid">
+            <div class="detail-top-left">
+                <div class="lang-content active" data-lang="en">
+                    <h1 class="detail-title">Deep Tissue & Sports Massage</h1>
+                    <div class="detail-tags">
+                        <span class="detail-tag">Muscle soreness & fatigue from training</span>
+                        <span class="detail-tag">Regular workout recovery</span>
+                        <span class="detail-tag">Core muscle activation</span>
+                    </div>
+                    <p class="detail-intro">Deep myofascial massage combined with oil-assisted relaxation, relieving fatigue and soreness built up from long-term exercise.</p>
+                </div>
+                <div class="lang-content" data-lang="de">
+                    <h1 class="detail-title">Tiefengewebe- & Sportmassage</h1>
+                    <div class="detail-tags">
+                        <span class="detail-tag">Muskelkater & Erschöpfung durch Training</span>
+                        <span class="detail-tag">Regelmäßige Regeneration</span>
+                        <span class="detail-tag">Aktivierung der Rumpfmuskulatur</span>
+                    </div>
+                    <p class="detail-intro">Tiefe myofasziale Massage kombiniert mit ölunterstützter Entspannung, die Erschöpfung und Muskelkater durch regelmäßiges Training lindert.</p>
+                </div>
+                <div class="lang-content" data-lang="zh">
+                    <h1 class="detail-title">深层组织和运动按摩</h1>
+                    <div class="detail-tags">
+                        <span class="detail-tag">长期锻炼带来的肌肉酸痛和疲劳</span>
+                        <span class="detail-tag">追求定期的运动恢复和肌肉保养</span>
+                        <span class="detail-tag">核心肌群激活</span>
+                    </div>
+                    <p class="detail-intro">深层的肌筋膜按摩和精油辅助放松，让因为长期运动积累的身体疲劳和酸痛得到缓解。</p>
+                </div>
 
-        <div class="detail-actions">
-            <a href="https://wa.me/4915203246639" target="_blank" rel="noopener noreferrer" class="detail-btn-primary">
-                <i class="fa-brands fa-whatsapp"></i>
-                <span class="lang-content active" data-lang="en">Inquire / Book</span>
-                <span class="lang-content" data-lang="de">Anfragen / Buchen</span>
-                <span class="lang-content" data-lang="zh">咨询/预定</span>
-            </a>
-            <a href="index.html#services" class="detail-btn-secondary nav-link" data-target="#services">
-                <i class="fa-solid fa-arrow-left"></i>
-                <span class="lang-content active" data-lang="en">Back</span>
-                <span class="lang-content" data-lang="de">Zurück</span>
-                <span class="lang-content" data-lang="zh">返回</span>
-            </a>
-        </div>
-
-        <div class="detail-main-grid">
+                <div class="detail-actions">
+                    <a href="https://wa.me/4915203246639" target="_blank" rel="noopener noreferrer" class="detail-btn-primary">
+                        <i class="fa-brands fa-whatsapp"></i>
+                        <span class="lang-content active" data-lang="en">Inquire / Book</span>
+                        <span class="lang-content" data-lang="de">Anfragen / Buchen</span>
+                        <span class="lang-content" data-lang="zh">咨询/预定</span>
+                    </a>
+                    <a href="index.html#services" class="detail-btn-secondary nav-link" data-target="#services">
+                        <i class="fa-solid fa-arrow-left"></i>
+                        <span class="lang-content active" data-lang="en">Back</span>
+                        <span class="lang-content" data-lang="de">Zurück</span>
+                        <span class="lang-content" data-lang="zh">返回</span>
+                    </a>
+                </div>
+            </div>
             <div class="detail-hero-img">
                 <img src="assets/service-deep-tissue.jpg" alt="Deep Tissue & Sports Massage">
+            </div>
+        </div>
+
+        <div class="detail-bottom-grid">
+            <div class="detail-info-grid">
+                <div class="detail-info-card">
+                    <div class="detail-info-head"><i class="fa-solid fa-hands detail-info-icon"></i><div class="lang-content active" data-lang="en"><span class="detail-info-title">Technique</span></div><div class="lang-content" data-lang="de"><span class="detail-info-title">Technik</span></div><div class="lang-content" data-lang="zh"><span class="detail-info-title">按摩手法</span></div></div>
+                    <div class="lang-content active" data-lang="en">
+                        <div class="detail-info-desc">Combines deep tissue massage, myofascial release, trigger point therapy and Thai massage techniques, using rhythmic pressure and guided stretching to release tension, with oils to aid relaxation.</div>
+                    </div>
+                    <div class="lang-content" data-lang="de">
+                        <div class="detail-info-desc">Kombiniert Tiefengewebsmassage, myofasziale Lösung, Triggerpunkttherapie und Thai-Massage-Techniken, mit rhythmischem Druck und geführten Dehnungen zur Lösung von Verspannungen, unterstützt durch Öle.</div>
+                    </div>
+                    <div class="lang-content" data-lang="zh">
+                        <div class="detail-info-desc">结合深层组织按摩方法、肌筋膜放松、触发点疗法以及泰式按摩，以有节奏的按压以及引导式拉伸来缓解紧绷部位，并使用精油辅助舒缓。</div>
+                    </div>
+                </div>
+                <div class="detail-info-card">
+                    <div class="detail-info-head"><i class="fa-solid fa-person detail-info-icon"></i><div class="lang-content active" data-lang="en"><span class="detail-info-title">Areas Covered</span></div><div class="lang-content" data-lang="de"><span class="detail-info-title">Behandelte Bereiche</span></div><div class="lang-content" data-lang="zh"><span class="detail-info-title">按摩部位</span></div></div>
+                    <div class="lang-content active" data-lang="en">
+                        <div class="detail-info-desc">Back: neck, shoulders, back, glutes, arms, hands, thighs, calves, soles of feet.
+Front: chest (male only), abdomen (male only), thighs, calves, top of feet.</div>
+                    </div>
+                    <div class="lang-content" data-lang="de">
+                        <div class="detail-info-desc">Rückseite: Nacken, Schultern, Rücken, Gesäß, Arme, Hände, Oberschenkel, Waden, Fußsohlen.
+Vorderseite: Brust (nur Männer), Bauch (nur Männer), Oberschenkel, Waden, Fußrücken.</div>
+                    </div>
+                    <div class="lang-content" data-lang="zh">
+                        <div class="detail-info-desc">背面：颈部、肩部、背部、臀部、手臂、手掌、大腿、小腿、脚底
+正面：胸部（仅男性）、腹部（仅男性）、大腿、小腿、脚背</div>
+                    </div>
+                </div>
+                <div class="detail-info-card">
+                    <div class="detail-info-head"><i class="fa-solid fa-droplet detail-info-icon"></i><div class="lang-content active" data-lang="en"><span class="detail-info-title">Oil</span></div><div class="lang-content" data-lang="de"><span class="detail-info-title">Öl</span></div><div class="lang-content" data-lang="zh"><span class="detail-info-title">精油</span></div></div>
+                    <div class="lang-content active" data-lang="en">
+                        <div class="detail-info-desc">Oil optional, activating oil recommended.</div>
+                    </div>
+                    <div class="lang-content" data-lang="de">
+                        <div class="detail-info-desc">Öl optional, belebendes Öl empfohlen.</div>
+                    </div>
+                    <div class="lang-content" data-lang="zh">
+                        <div class="detail-info-desc">可选精油或无精油，建议活络精油。</div>
+                    </div>
+                </div>
+                <div class="detail-info-card">
+                    <div class="detail-info-head"><i class="fa-solid fa-gauge-high detail-info-icon"></i><div class="lang-content active" data-lang="en"><span class="detail-info-title">Pressure</span></div><div class="lang-content" data-lang="de"><span class="detail-info-title">Druckstärke</span></div><div class="lang-content" data-lang="zh"><span class="detail-info-title">力度</span></div></div>
+                    <div class="lang-content active" data-lang="en">
+                        <div class="detail-info-desc">Medium to firm.</div>
+                    </div>
+                    <div class="lang-content" data-lang="de">
+                        <div class="detail-info-desc">Mittel bis kräftig.</div>
+                    </div>
+                    <div class="lang-content" data-lang="zh">
+                        <div class="detail-info-desc">力度中度以上。</div>
+                    </div>
+                </div>
             </div>
             <div class="detail-price-panel">
                 <div class="lang-content active" data-lang="en">
@@ -1560,60 +1629,6 @@
                         <p><b>90分钟</b> — 选择2-4个重点紧绷部位疏解，覆盖周边关联肌群，让身体放松更充分。</p>
                         <p><b>120分钟</b> — 调理全身主要肌群，实现身体深层释放，整体舒缓整合。</p>
                     </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="detail-info-grid">
-            <div class="detail-info-card">
-                <div class="detail-info-head"><i class="fa-solid fa-hands detail-info-icon"></i><div class="lang-content active" data-lang="en"><span class="detail-info-title">Technique</span></div><div class="lang-content" data-lang="de"><span class="detail-info-title">Technik</span></div><div class="lang-content" data-lang="zh"><span class="detail-info-title">按摩手法</span></div></div>
-                <div class="lang-content active" data-lang="en">
-                    <div class="detail-info-desc">Combines deep tissue massage, myofascial release, trigger point therapy and Thai massage techniques, using rhythmic pressure and guided stretching to release tension, with oils to aid relaxation.</div>
-                </div>
-                <div class="lang-content" data-lang="de">
-                    <div class="detail-info-desc">Kombiniert Tiefengewebsmassage, myofasziale Lösung, Triggerpunkttherapie und Thai-Massage-Techniken, mit rhythmischem Druck und geführten Dehnungen zur Lösung von Verspannungen, unterstützt durch Öle.</div>
-                </div>
-                <div class="lang-content" data-lang="zh">
-                    <div class="detail-info-desc">结合深层组织按摩方法、肌筋膜放松、触发点疗法以及泰式按摩，以有节奏的按压以及引导式拉伸来缓解紧绷部位，并使用精油辅助舒缓。</div>
-                </div>
-            </div>
-            <div class="detail-info-card">
-                <div class="detail-info-head"><i class="fa-solid fa-person detail-info-icon"></i><div class="lang-content active" data-lang="en"><span class="detail-info-title">Areas Covered</span></div><div class="lang-content" data-lang="de"><span class="detail-info-title">Behandelte Bereiche</span></div><div class="lang-content" data-lang="zh"><span class="detail-info-title">按摩部位</span></div></div>
-                <div class="lang-content active" data-lang="en">
-                    <div class="detail-info-desc">Back: neck, shoulders, back, glutes, arms, hands, thighs, calves, soles of feet.
-Front: chest (male only), abdomen (male only), thighs, calves, top of feet.</div>
-                </div>
-                <div class="lang-content" data-lang="de">
-                    <div class="detail-info-desc">Rückseite: Nacken, Schultern, Rücken, Gesäß, Arme, Hände, Oberschenkel, Waden, Fußsohlen.
-Vorderseite: Brust (nur Männer), Bauch (nur Männer), Oberschenkel, Waden, Fußrücken.</div>
-                </div>
-                <div class="lang-content" data-lang="zh">
-                    <div class="detail-info-desc">背面：颈部、肩部、背部、臀部、手臂、手掌、大腿、小腿、脚底
-正面：胸部（仅男性）、腹部（仅男性）、大腿、小腿、脚背</div>
-                </div>
-            </div>
-            <div class="detail-info-card">
-                <div class="detail-info-head"><i class="fa-solid fa-droplet detail-info-icon"></i><div class="lang-content active" data-lang="en"><span class="detail-info-title">Oil</span></div><div class="lang-content" data-lang="de"><span class="detail-info-title">Öl</span></div><div class="lang-content" data-lang="zh"><span class="detail-info-title">精油</span></div></div>
-                <div class="lang-content active" data-lang="en">
-                    <div class="detail-info-desc">Oil optional, activating oil recommended.</div>
-                </div>
-                <div class="lang-content" data-lang="de">
-                    <div class="detail-info-desc">Öl optional, belebendes Öl empfohlen.</div>
-                </div>
-                <div class="lang-content" data-lang="zh">
-                    <div class="detail-info-desc">可选精油或无精油，建议活络精油。</div>
-                </div>
-            </div>
-            <div class="detail-info-card">
-                <div class="detail-info-head"><i class="fa-solid fa-gauge-high detail-info-icon"></i><div class="lang-content active" data-lang="en"><span class="detail-info-title">Pressure</span></div><div class="lang-content" data-lang="de"><span class="detail-info-title">Druckstärke</span></div><div class="lang-content" data-lang="zh"><span class="detail-info-title">力度</span></div></div>
-                <div class="lang-content active" data-lang="en">
-                    <div class="detail-info-desc">Medium to firm.</div>
-                </div>
-                <div class="lang-content" data-lang="de">
-                    <div class="detail-info-desc">Mittel bis kräftig.</div>
-                </div>
-                <div class="lang-content" data-lang="zh">
-                    <div class="detail-info-desc">力度中度以上。</div>
                 </div>
             </div>
         </div>
