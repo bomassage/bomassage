@@ -1261,6 +1261,8 @@
         .detail-btn-primary, .detail-btn-secondary {
             display: inline-flex;
             align-items: center;
+            justify-content: center;
+            text-align: center;
             gap: 0.5rem;
             padding: 0.9rem 1.8rem;
             border-radius: 999px;
@@ -1366,16 +1368,21 @@
             border-radius: 18px;
             padding: 1.7rem;
         }
+        .detail-info-head {
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+            margin-bottom: 0.9rem;
+        }
         .detail-info-icon {
             color: var(--accent-icon);
-            font-size: 1.4rem;
-            margin-bottom: 0.9rem;
+            font-size: 1.3rem;
+            flex-shrink: 0;
         }
         .detail-info-title {
             font-size: var(--fs-md);
             font-weight: 600;
             color: var(--text-primary);
-            margin-bottom: 0.7rem;
         }
         .detail-info-desc {
             font-size: var(--fs-sm);
@@ -1389,6 +1396,12 @@
             }
             .detail-hero-img img {
                 min-height: 260px;
+            }
+            .detail-actions {
+                flex-direction: column;
+            }
+            .detail-btn-primary, .detail-btn-secondary {
+                width: 100%;
             }
         }
     </style>
@@ -1553,65 +1566,53 @@
 
         <div class="detail-info-grid">
             <div class="detail-info-card">
-                <div class="detail-info-icon"><i class="fa-solid fa-hands"></i></div>
+                <div class="detail-info-head"><i class="fa-solid fa-hands detail-info-icon"></i><div class="lang-content active" data-lang="en"><span class="detail-info-title">Technique</span></div><div class="lang-content" data-lang="de"><span class="detail-info-title">Technik</span></div><div class="lang-content" data-lang="zh"><span class="detail-info-title">按摩手法</span></div></div>
                 <div class="lang-content active" data-lang="en">
-                    <div class="detail-info-title">Technique</div>
                     <div class="detail-info-desc">Combines deep tissue massage, myofascial release, trigger point therapy and Thai massage techniques, using rhythmic pressure and guided stretching to release tension, with oils to aid relaxation.</div>
                 </div>
                 <div class="lang-content" data-lang="de">
-                    <div class="detail-info-title">Technik</div>
                     <div class="detail-info-desc">Kombiniert Tiefengewebsmassage, myofasziale Lösung, Triggerpunkttherapie und Thai-Massage-Techniken, mit rhythmischem Druck und geführten Dehnungen zur Lösung von Verspannungen, unterstützt durch Öle.</div>
                 </div>
                 <div class="lang-content" data-lang="zh">
-                    <div class="detail-info-title">按摩手法</div>
                     <div class="detail-info-desc">结合深层组织按摩方法、肌筋膜放松、触发点疗法以及泰式按摩，以有节奏的按压以及引导式拉伸来缓解紧绷部位，并使用精油辅助舒缓。</div>
                 </div>
             </div>
             <div class="detail-info-card">
-                <div class="detail-info-icon"><i class="fa-solid fa-person"></i></div>
+                <div class="detail-info-head"><i class="fa-solid fa-person detail-info-icon"></i><div class="lang-content active" data-lang="en"><span class="detail-info-title">Areas Covered</span></div><div class="lang-content" data-lang="de"><span class="detail-info-title">Behandelte Bereiche</span></div><div class="lang-content" data-lang="zh"><span class="detail-info-title">按摩部位</span></div></div>
                 <div class="lang-content active" data-lang="en">
-                    <div class="detail-info-title">Areas Covered</div>
                     <div class="detail-info-desc">Back: neck, shoulders, back, glutes, arms, hands, thighs, calves, soles of feet.
 Front: chest (male only), abdomen (male only), thighs, calves, top of feet.</div>
                 </div>
                 <div class="lang-content" data-lang="de">
-                    <div class="detail-info-title">Behandelte Bereiche</div>
                     <div class="detail-info-desc">Rückseite: Nacken, Schultern, Rücken, Gesäß, Arme, Hände, Oberschenkel, Waden, Fußsohlen.
 Vorderseite: Brust (nur Männer), Bauch (nur Männer), Oberschenkel, Waden, Fußrücken.</div>
                 </div>
                 <div class="lang-content" data-lang="zh">
-                    <div class="detail-info-title">按摩部位</div>
                     <div class="detail-info-desc">背面：颈部、肩部、背部、臀部、手臂、手掌、大腿、小腿、脚底
 正面：胸部（仅男性）、腹部（仅男性）、大腿、小腿、脚背</div>
                 </div>
             </div>
             <div class="detail-info-card">
-                <div class="detail-info-icon"><i class="fa-solid fa-droplet"></i></div>
+                <div class="detail-info-head"><i class="fa-solid fa-droplet detail-info-icon"></i><div class="lang-content active" data-lang="en"><span class="detail-info-title">Oil</span></div><div class="lang-content" data-lang="de"><span class="detail-info-title">Öl</span></div><div class="lang-content" data-lang="zh"><span class="detail-info-title">精油</span></div></div>
                 <div class="lang-content active" data-lang="en">
-                    <div class="detail-info-title">Oil</div>
                     <div class="detail-info-desc">Oil optional, activating oil recommended.</div>
                 </div>
                 <div class="lang-content" data-lang="de">
-                    <div class="detail-info-title">Öl</div>
                     <div class="detail-info-desc">Öl optional, belebendes Öl empfohlen.</div>
                 </div>
                 <div class="lang-content" data-lang="zh">
-                    <div class="detail-info-title">精油</div>
                     <div class="detail-info-desc">可选精油或无精油，建议活络精油。</div>
                 </div>
             </div>
             <div class="detail-info-card">
-                <div class="detail-info-icon"><i class="fa-solid fa-gauge-high"></i></div>
+                <div class="detail-info-head"><i class="fa-solid fa-gauge-high detail-info-icon"></i><div class="lang-content active" data-lang="en"><span class="detail-info-title">Pressure</span></div><div class="lang-content" data-lang="de"><span class="detail-info-title">Druckstärke</span></div><div class="lang-content" data-lang="zh"><span class="detail-info-title">力度</span></div></div>
                 <div class="lang-content active" data-lang="en">
-                    <div class="detail-info-title">Pressure</div>
                     <div class="detail-info-desc">Medium to firm.</div>
                 </div>
                 <div class="lang-content" data-lang="de">
-                    <div class="detail-info-title">Druckstärke</div>
                     <div class="detail-info-desc">Mittel bis kräftig.</div>
                 </div>
                 <div class="lang-content" data-lang="zh">
-                    <div class="detail-info-title">力度</div>
                     <div class="detail-info-desc">力度中度以上。</div>
                 </div>
             </div>
@@ -1816,7 +1817,7 @@ document.addEventListener('DOMContentLoaded', function() {
             header.classList.remove('scrolled');
         }
     });
-    // 4. 语言下拉 + 三语切换
+    // 4. 语言下拉 + 三语切换（含跨页面持久化）
     const langBtn = document.querySelector('.lang-current');
     const langList = document.querySelector('.lang-dropdown-list');
     const langOptions = document.querySelectorAll('.lang-option');
@@ -1826,24 +1827,32 @@ document.addEventListener('DOMContentLoaded', function() {
         e.stopPropagation();
         langList.classList.toggle('open');
     });
+    function applyLang(targetLang, persist) {
+        const option = document.querySelector('.lang-option[data-lang="' + targetLang + '"]');
+        if (!option) return;
+        const showText = option.getAttribute('data-show');
+        langBtn.innerHTML = `${showText} <i class="fas fa-chevron-down"></i>`;
+        langOptions.forEach(o => o.classList.remove('active'));
+        option.classList.add('active');
+        allLangBlocks.forEach(block => {
+            block.classList.toggle('active', block.dataset.lang === targetLang);
+        });
+        if (persist) {
+            try { localStorage.setItem('siteLang', targetLang); } catch(e) {}
+        }
+    }
     // 切换语言逻辑
     langOptions.forEach(option => {
         option.addEventListener('click', function(){
-            const targetLang = this.getAttribute('data-lang');
-            const showText = this.getAttribute('data-show');
-            // 更新顶部显示文字
-            langBtn.innerHTML = `${showText} <i class="fas fa-chevron-down"></i>`;
-            // 移除所有active
-            langOptions.forEach(o => o.classList.remove('active'));
-            option.classList.add('active');
-            // 切换页面文字
-            allLangBlocks.forEach(block => {
-                block.classList.toggle('active', block.dataset.lang === targetLang);
-            });
-            // 关闭下拉
+            applyLang(this.getAttribute('data-lang'), true);
             langList.classList.remove('open');
         });
     });
+    // 页面加载时读取已保存的语言设置，保持跨页面一致
+    try {
+        const savedLang = localStorage.getItem('siteLang');
+        if (savedLang) applyLang(savedLang, false);
+    } catch(e) {}
     // 空白点击关闭下拉
     document.addEventListener('click', () => langList.classList.remove('open'));
     // 5. FAQ 手风琴

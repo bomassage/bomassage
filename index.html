@@ -1941,7 +1941,7 @@ document.addEventListener('DOMContentLoaded', function() {
             header.classList.remove('scrolled');
         }
     });
-    // 4. 语言下拉 + 三语切换
+    // 4. 语言下拉 + 三语切换（含跨页面持久化）
     const langBtn = document.querySelector('.lang-current');
     const langList = document.querySelector('.lang-dropdown-list');
     const langOptions = document.querySelectorAll('.lang-option');
@@ -1951,24 +1951,32 @@ document.addEventListener('DOMContentLoaded', function() {
         e.stopPropagation();
         langList.classList.toggle('open');
     });
+    function applyLang(targetLang, persist) {
+        const option = document.querySelector('.lang-option[data-lang="' + targetLang + '"]');
+        if (!option) return;
+        const showText = option.getAttribute('data-show');
+        langBtn.innerHTML = `${showText} <i class="fas fa-chevron-down"></i>`;
+        langOptions.forEach(o => o.classList.remove('active'));
+        option.classList.add('active');
+        allLangBlocks.forEach(block => {
+            block.classList.toggle('active', block.dataset.lang === targetLang);
+        });
+        if (persist) {
+            try { localStorage.setItem('siteLang', targetLang); } catch(e) {}
+        }
+    }
     // 切换语言逻辑
     langOptions.forEach(option => {
         option.addEventListener('click', function(){
-            const targetLang = this.getAttribute('data-lang');
-            const showText = this.getAttribute('data-show');
-            // 更新顶部显示文字
-            langBtn.innerHTML = `${showText} <i class="fas fa-chevron-down"></i>`;
-            // 移除所有active
-            langOptions.forEach(o => o.classList.remove('active'));
-            option.classList.add('active');
-            // 切换页面文字
-            allLangBlocks.forEach(block => {
-                block.classList.toggle('active', block.dataset.lang === targetLang);
-            });
-            // 关闭下拉
+            applyLang(this.getAttribute('data-lang'), true);
             langList.classList.remove('open');
         });
     });
+    // 页面加载时读取已保存的语言设置，保持跨页面一致
+    try {
+        const savedLang = localStorage.getItem('siteLang');
+        if (savedLang) applyLang(savedLang, false);
+    } catch(e) {}
     // 空白点击关闭下拉
     document.addEventListener('click', () => langList.classList.remove('open'));
     // 5. FAQ 手风琴
