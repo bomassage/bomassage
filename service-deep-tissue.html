@@ -1259,7 +1259,7 @@
             margin-bottom: 0;
         }
         .detail-btn-primary, .detail-btn-secondary {
-            display: inline-flex;
+            display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
@@ -1273,6 +1273,11 @@
             cursor: pointer;
             border: none;
             font-family: inherit;
+            width: fit-content;
+        }
+        .detail-btn-primary .lang-content.active,
+        .detail-btn-secondary .lang-content.active {
+            display: inline;
         }
         .detail-btn-primary {
             background: var(--pale-teal);
@@ -1324,24 +1329,28 @@
             background: rgba(186, 205, 200, 0.08);
             border: 1px solid rgba(255,255,255,0.14);
             border-radius: 20px;
-            padding: 1.8rem;
+            padding: 1.4rem 1.6rem;
         }
         .detail-price-title {
-            font-size: 0.72rem;
+            font-size: 0.7rem;
             letter-spacing: 1.5px;
             text-transform: uppercase;
             color: var(--pale-teal);
-            margin-bottom: 1.1rem;
+            margin-bottom: 0.6rem;
+        }
+        .detail-price-block {
+            padding: 0.7rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .detail-price-block:last-of-type {
+            border-bottom: none;
+            padding-bottom: 0;
         }
         .detail-price-row {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0.75rem 0;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-        }
-        .detail-price-row:last-of-type {
-            border-bottom: none;
+            margin-bottom: 0.35rem;
         }
         .detail-price-duration {
             color: var(--text-primary);
@@ -1352,19 +1361,10 @@
             font-weight: 700;
             font-size: 1.05rem;
         }
-        .detail-duration-note {
-            margin-top: 1.2rem;
-            padding-top: 1.2rem;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            font-size: var(--fs-sm);
+        .detail-price-note {
+            font-size: 0.82rem;
             color: var(--text-tertiary);
-            line-height: 1.65;
-        }
-        .detail-duration-note p {
-            margin-bottom: 0.6rem;
-        }
-        .detail-duration-note p:last-child {
-            margin-bottom: 0;
+            line-height: 1.55;
         }
         .detail-info-grid {
             display: grid;
@@ -1599,35 +1599,47 @@ Vorderseite: Brust (nur Männer), Bauch (nur Männer), Oberschenkel, Waden, Fuß
             <div class="detail-price-panel">
                 <div class="lang-content active" data-lang="en">
                     <div class="detail-price-title">Pricing</div>
-                    <div class="detail-price-row"><span class="detail-price-duration">60 minutes</span><span class="detail-price-amount">65 €</span></div>
-                    <div class="detail-price-row"><span class="detail-price-duration">90 minutes 👍</span><span class="detail-price-amount">90 €</span></div>
-                    <div class="detail-price-row"><span class="detail-price-duration">120 minutes 👍</span><span class="detail-price-amount">120 €</span></div>
-                    <div class="detail-duration-note">
-                        <p><b>60 min</b> — Focuses on 1–2 key tense areas, with light relaxation elsewhere, restoring overall comfort.</p>
-                        <p><b>90 min</b> — Focuses on 2–4 key tense areas, covering surrounding muscle groups for fuller relaxation.</p>
-                        <p><b>120 min</b> — Conditions the body's main muscle groups for deep release and full-body relaxation.</p>
+                    <div class="detail-price-block">
+                        <div class="detail-price-row"><span class="detail-price-duration">60 minutes</span><span class="detail-price-amount">65 €</span></div>
+                        <p class="detail-price-note">Focuses on 1–2 key tense areas, with light relaxation elsewhere, restoring overall comfort.</p>
+                    </div>
+                    <div class="detail-price-block">
+                        <div class="detail-price-row"><span class="detail-price-duration">90 minutes 👍</span><span class="detail-price-amount">90 €</span></div>
+                        <p class="detail-price-note">Focuses on 2–4 key tense areas, covering surrounding muscle groups for fuller relaxation.</p>
+                    </div>
+                    <div class="detail-price-block">
+                        <div class="detail-price-row"><span class="detail-price-duration">120 minutes 👍</span><span class="detail-price-amount">120 €</span></div>
+                        <p class="detail-price-note">Conditions the body's main muscle groups for deep release and full-body relaxation.</p>
                     </div>
                 </div>
                 <div class="lang-content" data-lang="de">
                     <div class="detail-price-title">Preise</div>
-                    <div class="detail-price-row"><span class="detail-price-duration">60 Minuten</span><span class="detail-price-amount">65 €</span></div>
-                    <div class="detail-price-row"><span class="detail-price-duration">90 Minuten 👍</span><span class="detail-price-amount">90 €</span></div>
-                    <div class="detail-price-row"><span class="detail-price-duration">120 Minuten 👍</span><span class="detail-price-amount">120 €</span></div>
-                    <div class="detail-duration-note">
-                        <p><b>60 Min</b> — Konzentriert sich auf 1–2 zentrale Verspannungsbereiche, restliche Bereiche werden leicht entspannt.</p>
-                        <p><b>90 Min</b> — Konzentriert sich auf 2–4 zentrale Verspannungsbereiche inklusive umliegender Muskelgruppen für eine umfassendere Entspannung.</p>
-                        <p><b>120 Min</b> — Behandelt die wichtigsten Muskelgruppen des gesamten Körpers für eine tiefe Lösung und Ganzkörperentspannung.</p>
+                    <div class="detail-price-block">
+                        <div class="detail-price-row"><span class="detail-price-duration">60 Minuten</span><span class="detail-price-amount">65 €</span></div>
+                        <p class="detail-price-note">Konzentriert sich auf 1–2 zentrale Verspannungsbereiche, restliche Bereiche werden leicht entspannt.</p>
+                    </div>
+                    <div class="detail-price-block">
+                        <div class="detail-price-row"><span class="detail-price-duration">90 Minuten 👍</span><span class="detail-price-amount">90 €</span></div>
+                        <p class="detail-price-note">Konzentriert sich auf 2–4 zentrale Verspannungsbereiche inklusive umliegender Muskelgruppen für eine umfassendere Entspannung.</p>
+                    </div>
+                    <div class="detail-price-block">
+                        <div class="detail-price-row"><span class="detail-price-duration">120 Minuten 👍</span><span class="detail-price-amount">120 €</span></div>
+                        <p class="detail-price-note">Behandelt die wichtigsten Muskelgruppen des gesamten Körpers für eine tiefe Lösung und Ganzkörperentspannung.</p>
                     </div>
                 </div>
                 <div class="lang-content" data-lang="zh">
                     <div class="detail-price-title">定价</div>
-                    <div class="detail-price-row"><span class="detail-price-duration">60分钟</span><span class="detail-price-amount">65€</span></div>
-                    <div class="detail-price-row"><span class="detail-price-duration">90分钟 👍</span><span class="detail-price-amount">90€</span></div>
-                    <div class="detail-price-row"><span class="detail-price-duration">120分钟 👍</span><span class="detail-price-amount">120€</span></div>
-                    <div class="detail-duration-note">
-                        <p><b>60分钟</b> — 选择1-2个重点紧绷部位疏解，其余部位简单放松，让身体恢复舒适状态。</p>
-                        <p><b>90分钟</b> — 选择2-4个重点紧绷部位疏解，覆盖周边关联肌群，让身体放松更充分。</p>
-                        <p><b>120分钟</b> — 调理全身主要肌群，实现身体深层释放，整体舒缓整合。</p>
+                    <div class="detail-price-block">
+                        <div class="detail-price-row"><span class="detail-price-duration">60分钟</span><span class="detail-price-amount">65€</span></div>
+                        <p class="detail-price-note">选择1-2个重点紧绷部位疏解，其余部位简单放松，让身体恢复舒适状态。</p>
+                    </div>
+                    <div class="detail-price-block">
+                        <div class="detail-price-row"><span class="detail-price-duration">90分钟 👍</span><span class="detail-price-amount">90€</span></div>
+                        <p class="detail-price-note">选择2-4个重点紧绷部位疏解，覆盖周边关联肌群，让身体放松更充分。</p>
+                    </div>
+                    <div class="detail-price-block">
+                        <div class="detail-price-row"><span class="detail-price-duration">120分钟 👍</span><span class="detail-price-amount">120€</span></div>
+                        <p class="detail-price-note">调理全身主要肌群，实现身体深层释放，整体舒缓整合。</p>
                     </div>
                 </div>
             </div>
