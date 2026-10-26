@@ -458,18 +458,6 @@
             text-align: left;
             transition: all 0.4s ease;
         }
-        .service-card-link {
-            display: block;
-            color: inherit;
-            text-decoration: none;
-            cursor: pointer;
-        }
-        .service-card-link:hover {
-            color: inherit;
-        }
-        .service-card:hover {
-            transform: translateY(-8px);
-        }
         .card-img-box {
             width: 100%;
             height: 270px;
@@ -559,29 +547,31 @@
         }
         .service-price {
             margin-top: 1.1rem;
-            padding-top: 1rem;
-            border-top: 1px solid rgba(255,255,255,0.12);
             font-size: var(--fs-sm);
             font-weight: 600;
             color: var(--pale-teal);
         }
         .service-see-more {
+            display: block;
             margin-top: 0.9rem;
             text-align: right;
             font-size: var(--fs-sm);
             font-weight: 600;
             color: var(--pale-teal);
-            transition: gap 0.2s ease, color 0.2s ease;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            cursor: pointer;
+            transition: color 0.2s ease;
         }
         .service-see-more i {
             margin-left: 0.3rem;
             font-size: 0.75em;
             transition: transform 0.2s ease;
         }
-        .service-card-link:hover .service-see-more {
+        .service-see-more:hover {
             color: var(--text-primary);
         }
-        .service-card-link:hover .service-see-more i {
+        .service-see-more:hover i {
             transform: translateX(3px);
         }
         .service-suitable-title,
@@ -1351,7 +1341,7 @@
                 <h2 class="main-title">服务项目 & 收费标准</h2>
             </div>
             <div class="services-grid">
-                <a href="service-deep-tissue.html" class="service-card service-card-link scroll-animate delay-1">
+                <div class="service-card scroll-animate delay-1">
                     <div class="card-img-box has-photo">
                         <div class="card-icon-badge"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
                             <circle cx="24" cy="24" r="19"/>
@@ -1369,7 +1359,7 @@
                             <li>Fatigue from regular exercise or prolonged sitting</li>
                         </ul>
                         <div class="service-price">60 min – 65 € | 90 min – 90 € | 120 min – 120 €</div>
-                    <div class="service-see-more">See more <i class="fa-solid fa-arrow-right"></i></div>
+                    <a href="service-deep-tissue.html" class="service-see-more">See more <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
                     <div class="lang-content" data-lang="de">
                         <h3 class="service-name"><i class="fa-solid fa-thumbs-up"></i> Tiefengewebe- & Sportmassage</h3>
@@ -1381,7 +1371,7 @@
                             <li>Erschöpfung durch regelmäßigen Sport oder langes Sitzen</li>
                         </ul>
                         <div class="service-price">60 Min – 65 € | 90 Min – 90 € | 120 Min – 120 €</div>
-                    <div class="service-see-more">See more <i class="fa-solid fa-arrow-right"></i></div>
+                    <a href="service-deep-tissue.html" class="service-see-more">Mehr erfahren <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
                     <div class="lang-content" data-lang="zh">
                         <h3 class="service-name"><i class="fa-solid fa-thumbs-up"></i> 深层组织和运动按摩</h3>
@@ -1393,10 +1383,10 @@
                             <li>核心肌群激活</li>
                         </ul>
                         <div class="service-price">60分钟 – 65€ ｜ 90分钟 – 90€ ｜ 120分钟 – 120€</div>
-                    <div class="service-see-more">查看更多 <i class="fa-solid fa-arrow-right"></i></div>
+                    <a href="service-deep-tissue.html" class="service-see-more">查看更多 <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
-                </a>
-                <a href="service-office-syndrome.html" class="service-card service-card-link scroll-animate delay-2">
+                </div>
+                <div class="service-card scroll-animate delay-2">
                     <div class="card-img-box has-photo">
                         <div class="card-icon-badge"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
                             <circle cx="24" cy="24" r="19"/>
@@ -1415,7 +1405,7 @@
                             <li>Poor posture habits (forward head, rounded shoulders)</li>
                         </ul>
                         <div class="service-price">60 min – 65 € | 90 min – 90 € | 120 min – 120 €</div>
-                    <div class="service-see-more">See more <i class="fa-solid fa-arrow-right"></i></div>
+                    <a href="service-office-syndrome.html" class="service-see-more">See more <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
                     <div class="lang-content" data-lang="de">
                         <h3 class="service-name">Office-Syndrom-Massage</h3>
@@ -1427,7 +1417,7 @@
                             <li>Schlechte Haltungsgewohnheiten (Rundrücken, vorgeschobener Kopf)</li>
                         </ul>
                         <div class="service-price">60 Min – 65 € | 90 Min – 90 € | 120 Min – 120 €</div>
-                    <div class="service-see-more">See more <i class="fa-solid fa-arrow-right"></i></div>
+                    <a href="service-office-syndrome.html" class="service-see-more">Mehr erfahren <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
                     <div class="lang-content" data-lang="zh">
                         <h3 class="service-name">办公室综合症按摩</h3>
@@ -1439,10 +1429,10 @@
                             <li>不良姿势习惯（头部前倾、圆肩等）</li>
                         </ul>
                         <div class="service-price">60分钟 – 65€ ｜ 90分钟 – 90€ ｜ 120分钟 – 120€</div>
-                    <div class="service-see-more">查看更多 <i class="fa-solid fa-arrow-right"></i></div>
+                    <a href="service-office-syndrome.html" class="service-see-more">查看更多 <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
-                </a>
-                <a href="service-aroma.html" class="service-card service-card-link scroll-animate delay-3">
+                </div>
+                <div class="service-card scroll-animate delay-3">
                     <div class="card-img-box has-photo">
                         <div class="card-icon-badge"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
                             <circle cx="24" cy="24" r="19"/>
@@ -1462,7 +1452,7 @@
                             <li>Dry or tired skin</li>
                         </ul>
                         <div class="service-price">60 min – 55 € | 90 min – 80 € | 120 min – 100 €</div>
-                    <div class="service-see-more">See more <i class="fa-solid fa-arrow-right"></i></div>
+                    <a href="service-aroma.html" class="service-see-more">See more <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
                     <div class="lang-content" data-lang="de">
                         <h3 class="service-name">Aromatherapie Entspannungsmassage</h3>
@@ -1474,7 +1464,7 @@
                             <li>Trockene oder müde Haut</li>
                         </ul>
                         <div class="service-price">60 Min – 55 € | 90 Min – 80 € | 120 Min – 100 €</div>
-                    <div class="service-see-more">See more <i class="fa-solid fa-arrow-right"></i></div>
+                    <a href="service-aroma.html" class="service-see-more">Mehr erfahren <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
                     <div class="lang-content" data-lang="zh">
                         <h3 class="service-name">芳香SPA放松按摩</h3>
@@ -1486,10 +1476,10 @@
                             <li>干燥或疲倦的皮肤</li>
                         </ul>
                         <div class="service-price">60分钟 – 55€ ｜ 90分钟 – 80€ ｜ 120分钟 – 100€</div>
-                    <div class="service-see-more">查看更多 <i class="fa-solid fa-arrow-right"></i></div>
+                    <a href="service-aroma.html" class="service-see-more">查看更多 <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
-                </a>
-                <a href="service-healing-touch.html" class="service-card service-card-link scroll-animate delay-4">
+                </div>
+                <div class="service-card scroll-animate delay-4">
                     <div class="card-img-box has-photo">
                         <div class="card-icon-badge"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
                             <circle cx="24" cy="24" r="19"/>
@@ -1507,7 +1497,7 @@
                             <li>Those experiencing low mood</li>
                         </ul>
                         <div class="service-price">60 min – 55 € | 90 min – 80 € | 120 min – 100 €</div>
-                    <div class="service-see-more">See more <i class="fa-solid fa-arrow-right"></i></div>
+                    <a href="service-healing-touch.html" class="service-see-more">See more <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
                     <div class="lang-content" data-lang="de">
                         <h3 class="service-name">Heilsame Berührungsmassage</h3>
@@ -1519,7 +1509,7 @@
                             <li>Bei gedrückter Stimmung</li>
                         </ul>
                         <div class="service-price">60 Min – 55 € | 90 Min – 80 € | 120 Min – 100 €</div>
-                    <div class="service-see-more">See more <i class="fa-solid fa-arrow-right"></i></div>
+                    <a href="service-healing-touch.html" class="service-see-more">Mehr erfahren <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
                     <div class="lang-content" data-lang="zh">
                         <h3 class="service-name">疗愈按摩</h3>
@@ -1531,10 +1521,10 @@
                             <li>情绪低落</li>
                         </ul>
                         <div class="service-price">60分钟 – 55€ ｜ 90分钟 – 80€ ｜ 120分钟 – 100€</div>
-                    <div class="service-see-more">查看更多 <i class="fa-solid fa-arrow-right"></i></div>
+                    <a href="service-healing-touch.html" class="service-see-more">查看更多 <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
-                </a>
-                <a href="service-thai.html" class="service-card service-card-link scroll-animate delay-1">
+                </div>
+                <div class="service-card scroll-animate delay-1">
                     <div class="card-img-box has-photo">
                         <div class="card-icon-badge"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
                             <circle cx="24" cy="24" r="19"/>
@@ -1553,7 +1543,7 @@
                             <li>Guests who prefer massage without oil</li>
                         </ul>
                         <div class="service-price">60 min – 55 € | 90 min – 80 € | 120 min – 100 €</div>
-                    <div class="service-see-more">See more <i class="fa-solid fa-arrow-right"></i></div>
+                    <a href="service-thai.html" class="service-see-more">See more <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
                     <div class="lang-content" data-lang="de">
                         <h3 class="service-name">Thai- & Traditionelle Asiatische Massage</h3>
@@ -1565,7 +1555,7 @@
                             <li>Gäste, die eine Massage ohne Öl bevorzugen</li>
                         </ul>
                         <div class="service-price">60 Min – 55 € | 90 Min – 80 € | 120 Min – 100 €</div>
-                    <div class="service-see-more">See more <i class="fa-solid fa-arrow-right"></i></div>
+                    <a href="service-thai.html" class="service-see-more">Mehr erfahren <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
                     <div class="lang-content" data-lang="zh">
                         <h3 class="service-name">泰式中式融合按摩</h3>
@@ -1577,10 +1567,10 @@
                             <li>喜欢无油按摩</li>
                         </ul>
                         <div class="service-price">60分钟 – 55€ ｜ 90分钟 – 80€ ｜ 120分钟 – 100€</div>
-                    <div class="service-see-more">查看更多 <i class="fa-solid fa-arrow-right"></i></div>
+                    <a href="service-thai.html" class="service-see-more">查看更多 <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
-                </a>
-                <a href="service-custom.html" class="service-card service-card-link scroll-animate delay-2">
+                </div>
+                <div class="service-card scroll-animate delay-2">
                     <div class="card-img-box has-photo">
                         <div class="card-icon-badge"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
                             <circle cx="24" cy="24" r="19"/>
@@ -1598,7 +1588,7 @@
                         <li>Custom session durations</li>
                         </ul>
                         <div class="service-price">60 min – 65 € | 90 min – 90 € | 120 min – 120 €</div>
-                    <div class="service-see-more">See more <i class="fa-solid fa-arrow-right"></i></div>
+                    <a href="service-custom.html" class="service-see-more">See more <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
                     <div class="lang-content" data-lang="de">
                         <h3 class="service-name">Individuell angepasste Massage</h3>
@@ -1610,7 +1600,7 @@
                         <li>Individuelle Behandlungsdauer</li>
                         </ul>
                         <div class="service-price">60 Min – 65 € | 90 Min – 90 € | 120 Min – 120 €</div>
-                    <div class="service-see-more">See more <i class="fa-solid fa-arrow-right"></i></div>
+                    <a href="service-custom.html" class="service-see-more">Mehr erfahren <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
                     <div class="lang-content" data-lang="zh">
                         <h3 class="service-name">专属定制按摩方案</h3>
@@ -1622,9 +1612,9 @@
                         <li>特殊按摩时长</li>
                         </ul>
                         <div class="service-price">60分钟 – 65€ ｜ 90分钟 – 90€ ｜ 120分钟 – 120€</div>
-                    <div class="service-see-more">查看更多 <i class="fa-solid fa-arrow-right"></i></div>
+                    <a href="service-custom.html" class="service-see-more">查看更多 <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
-                </a>
+                </div>
             </div>
         </section>
         <section id="reviews" class="section-spacing scroll-animate delay-2">
